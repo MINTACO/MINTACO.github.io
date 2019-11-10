@@ -1,0 +1,48 @@
+---
+title: 好用的控制台工具Cmder
+author: shawn
+avatar: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg'
+authorLink: mintaco.cn
+authorAbout: 像风一样自由
+authorDesc: 像风一样自由
+categories: 技术
+comments: true
+tags: Tools
+photos: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png'
+date: 2019-11-10 18:30:58
+keywords:
+description:
+---
+
+# Cmder安装及简单配置
+
+## 1.cmder简介
+小巧强大的控制台模拟器，相比原生win控制台，界面更美观，复制粘贴更方便，支持分屏等，且有强大的快捷操作键，开发更高效。
+
+## 2.安装
+官网[cmder](https://cmder.net/)下载安装，最好下载完整版，支持git。
+
+## 3.简单配置
+### 3.1配置环境变量
+计算机属性——高级系统设置——环境变量——系统变量，将cmder安装路径添加到PATH中。
+### 3.2将cmder添加到鼠标右键菜单
+管理员身份开启cmd，运行`Cmder.exe /REGISTER ALL`
+### 3.3解决中文乱码
+Settings->Startup->Environment 添加
+`set LANG=zh_CN.UTF-8`
+
+### 4.常用快捷键
+```
+Tab       自动路径补全
+Ctrl+T    建立新页签
+Ctrl+W    关闭页签
+Ctrl+Tab  切换页签
+Alt+F4    关闭所有页签
+Alt+Shift+1 开启cmd.exe
+Alt+Shift+2 开启powershell.exe
+Alt+Shift+3 开启powershell.exe (系统管理员权限)
+Ctrl+1      快速切换到第1个页签
+Ctrl+n      快速切换到第n个页签( n值无上限)
+Alt + enter 切换到全屏状态
+Ctr+r       历史命令搜索
+```
