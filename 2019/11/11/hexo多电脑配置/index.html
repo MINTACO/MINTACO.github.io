@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">测试 | Shawn&#39;s Blog</title>
+  <title itemprop="name">hexo多电脑配置 | Shawn&#39;s Blog</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/images/favicon.ico">
   
@@ -290,11 +290,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      测试</h1>
+      hexo多电脑配置</h1>
       <p class="entry-census">
         <span>
           <a href="mintaco.cn">
@@ -306,7 +306,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-11-10<span class="bull">
+        2019-11-11<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -320,7 +320,18 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <h1 id="hexo多台电脑配置"><a href="#hexo多台电脑配置" class="headerlink" title="hexo多台电脑配置"></a>hexo多台电脑配置</h1><p>最近买了新电脑，要把旧电脑上的hexo博客配置转移过来，记录下过程。</p>
+<h2 id="1-备份博客原文件"><a href="#1-备份博客原文件" class="headerlink" title="1.备份博客原文件"></a>1.备份博客原文件</h2><p>先在github博客仓库新建backup分支，在hexo配置文件_config.yml中添加如下配置：</p>
+<pre><code># backup
+backup:
+  type: git
+  message: backup my blog of https://mintaco.github.io/
+  repository:
+    github: git@github.com:MINTACO/MINTACO.github.io.git,backup
+</code></pre><p>其中仓库地址自行更改；<br>执行<code>hexo backup</code></p>
+<h2 id="2-新电脑安装git-node环境"><a href="#2-新电脑安装git-node环境" class="headerlink" title="2.新电脑安装git,node环境"></a>2.新电脑安装git,node环境</h2><p>安装完后配置git用户名，邮箱及ssh密钥</p>
+<h2 id="3-克隆backup分支到新电脑本地"><a href="#3-克隆backup分支到新电脑本地" class="headerlink" title="3.克隆backup分支到新电脑本地"></a>3.克隆backup分支到新电脑本地</h2><h2 id="4-复制原电脑中的-ssh文件夹中文件到新电脑的对应文件夹中"><a href="#4-复制原电脑中的-ssh文件夹中文件到新电脑的对应文件夹中" class="headerlink" title="4.复制原电脑中的.ssh文件夹中文件到新电脑的对应文件夹中"></a>4.复制原电脑中的.ssh文件夹中文件到新电脑的对应文件夹中</h2><p>不复制的话没法deploy<br><img src="https://i.loli.net/2019/11/11/5b3dDQigojXF8x6.png" alt></p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -351,15 +362,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/11/10/测试-3/" rel="prev">
+            <a href="/2019/11/12/vue指令/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                测试</h3>
+                vue指令</h3>
                 <hr>
               </div>
             </a>
@@ -369,9 +380,9 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/11/10/测试-1/" rel="next">
+            <a href="/2019/11/10/测试-3/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
               </div>
               <span class="label">
               Next Post</span>

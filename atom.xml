@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-10T12:08:19.739Z</updated>
+  <updated>2019-11-12T07:06:27.579Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue插值表达式</title>
+    <link href="/2019/11/12/vue%E6%8F%92%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>/2019/11/12/vue插值表达式/</id>
+    <published>2019-11-12T01:01:59.000Z</published>
+    <updated>2019-11-12T07:06:27.579Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM 绑定至底层 Vue
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="VUE" scheme="/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue指令</title>
+    <link href="/2019/11/12/vue%E6%8C%87%E4%BB%A4/"/>
+    <id>/2019/11/12/vue指令/</id>
+    <published>2019-11-12T00:58:37.000Z</published>
+    <updated>2019-11-12T11:06:37.067Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;v-pre 跳过该元素和它的子元素的变异过程，显示原始的{ { } }的标签&lt;/li&gt;
+&lt;li&gt;v-cloak 该指令保持在元素上，直到关联实例结束变异 可与css配合使用隐藏未编译的{ { } }标签&lt;/li&gt;
+&lt;li&gt;v-once
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="VUE" scheme="/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo多电脑配置</title>
+    <link href="/2019/11/11/hexo%E5%A4%9A%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE/"/>
+    <id>/2019/11/11/hexo多电脑配置/</id>
+    <published>2019-11-11T01:29:26.000Z</published>
+    <updated>2019-11-11T06:50:33.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;hexo多台电脑配置&quot;&gt;&lt;a href=&quot;#hexo多台电脑配置&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Tools" scheme="/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>测试</title>
@@ -162,7 +243,7 @@
     <link href="/2019/10/31/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>/2019/10/31/MarkDown基本语法/</id>
     <published>2019-10-31T08:58:44.000Z</published>
-    <updated>2019-11-10T12:08:19.724Z</updated>
+    <updated>2019-11-12T07:13:18.253Z</updated>
     
     <summary type="html">
     

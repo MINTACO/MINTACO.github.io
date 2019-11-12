@@ -1072,7 +1072,7 @@ a:hover,a:active {
     z-index:0
 }
 #video-btn,#video-add {
-    display: none;
+    /* display: none; */
     position:absolute;
     bottom:3px;
     right:5px;
@@ -3849,7 +3849,7 @@ li.feature-2 {
 .notice-content {
     display:initial;
     vertical-align:middle;
-    color: #ff0000
+    color: #666
 }
 .headertop {
     position:relative;

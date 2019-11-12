@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">测试 | Shawn&#39;s Blog</title>
+  <title itemprop="name">vue插值表达式 | Shawn&#39;s Blog</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/images/favicon.ico">
   
@@ -290,11 +290,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      测试</h1>
+      vue插值表达式</h1>
       <p class="entry-census">
         <span>
           <a href="mintaco.cn">
@@ -306,7 +306,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-11-10<span class="bull">
+        2019-11-12<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -320,7 +320,43 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。<br>在底层的实现上，Vue 将模板编译成虚拟 DOM 渲染函数。结合响应系统，Vue 能够智能地计算出最少需要重新渲染多少组件，并把 DOM 操作次数减到最少。<br>数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值，即插值表达式。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>1.插值表达式中使用的数据必须先在data中存在，才能实现数据绑定；<br>2.支持js<strong>表达式</strong>,但不支持<del>语句</del>及<del>流控制</del>，可用<strong>三目表达式</strong>；<br>2.要更改的数据必须先存在，视图才会刷新；<br>3.通过索引或者长度的方式改变数组，视图不会刷新，必须使用数组的变异方法，如push、pop、shift、unshift、sort、reverse、splice；<br>4.$set可用来更改对象的值，例：<code>vm.$set(vm.obj, &#39;xxx&#39;, 90);</code>;也可以更改其他元素，大多用来更改对象。</p>
+<pre><code> &lt;div id=&quot;app&quot;&gt;
+    {{ 'a' }}&lt;br/&gt;
+    {{ 1 }}&lt;br/&gt;
+    {{ true }}&lt;br/&gt;
+    {{ [1, 2, 3] }}&lt;br/&gt;
+    {{ {a: 1, b: 10} }}&lt;br/&gt;
+    {{ 1+1 }}&lt;br/&gt;
+    {{ 1-1 }}&lt;br/&gt;
+    {{ 'a' + 'b' }}&lt;br/&gt;
+
+    &lt;!-- {{ var a = 10; return a; }} 语句不支持&lt;br/&gt;
+    {{ if(true) { return 'a'} }} 流控制不支持，可用三元表达式&lt;br/&gt; --&gt;
+
+    {{ !true ? 'a' : 'b' }}&lt;br/&gt;
+    {{ name }}&lt;br/&gt;
+    {{ desc }}&lt;br/&gt;
+    {{ arr[0] }}&lt;br/&gt;
+    {{ obj["b"] }}&lt;br/&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    const vm = new Vue({
+      el:&quot;#app&quot;,
+      data:{
+        name: &#39;ls&#39;,
+        desc: &#39;coder&#39;,
+        arr: [1, 2, 3],
+        obj: {
+          a: 1, b: 10
+        }
+      }
+    })
+    // vm.$mount(&#39;#app&#39;);另一种挂载方法
+    // $el 返回vue作用的DOM元素
+&lt;/script&gt;
+</code></pre>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -348,36 +384,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/11/10/测试-3/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                测试</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2019/11/10/测试-1/" rel="next">
+            <a href="/2019/11/12/vue指令/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                测试</h3>
+                vue指令</h3>
                 <hr>
               </div>
             </a>

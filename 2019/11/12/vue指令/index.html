@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">测试 | Shawn&#39;s Blog</title>
+  <title itemprop="name">vue指令 | Shawn&#39;s Blog</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/images/favicon.ico">
   
@@ -290,11 +290,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      测试</h1>
+      vue指令</h1>
       <p class="entry-census">
         <span>
           <a href="mintaco.cn">
@@ -306,7 +306,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-11-10<span class="bull">
+        2019-11-12<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -320,7 +320,224 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <ol>
+<li>v-pre 跳过该元素和它的子元素的变异过程，显示原始的{ { } }的标签</li>
+<li>v-cloak 该指令保持在元素上，直到关联实例结束变异 可与css配合使用隐藏未编译的{ { } }标签</li>
+<li>v-once 只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能。vue内部进行了缓存，以后使用的值都是缓存里的结果</li>
+<li>v-html === innerHTML  XSS  更新元素的innerHTML</li>
+<li>v-text === innerText 更新元素的innerText，不常用，一般直接使用{ { } }</li>
+<li>v-if 控制元素是否存在  判断多个相同状态的用<template>标签包裹</template></li>
+<li>v-else –  配合v-if，两者必须相邻</li>
+<li>v-else-if 同理</li>
+<li><p>v-show  控制元素的dispaly样式</p>
+<p><strong><em>v-show和v-if的区别？</em></strong></p>
+<ol>
+<li>v-if是控制该元素是否存在，值为false时，完全移除该元素<br>v-show是控制该元素的样式(display)，值为false时，元素的display为none</li>
+<li>v-if支持template标签<br>v-show不支持template标签</li>
+</ol>
+</li>
+<li><p>v-bind&lt;=&gt;： 绑定属性，当绑定class，style时有两种方式，绑定多个属性可用[],需条件判断可用{}</p>
+</li>
+<li>v-on&lt;=&gt;@ 监听事件<br><strong><em>this指向</em></strong><ol>
+<li>methods里的函数this指向vue实例</li>
+<li>函数不可写在data里，this指向window</li>
+</ol>
+</li>
+</ol>
+<pre><code>  &lt;div id=&quot;app&quot;&gt; 
+    &lt;div v-once&gt;
+      {{a}}
+    &lt;/div&gt;
+    &lt;div v-html=&quot;dom&quot;&gt;&lt;/div&gt;
+    &lt;template v-if=&quot;flag&quot;&gt;
+      &lt;div&gt;123&lt;/div&gt;
+      &lt;div&gt;456&lt;/div&gt;
+    &lt;/template&gt;
+    &lt;div v-if=&quot;count === 1&quot;&gt;hello&lt;/div&gt;
+    &lt;div v-else-if=&quot;count === 2&quot;&gt;hi&lt;/div&gt;
+    &lt;div v-else&gt;world&lt;/div&gt;
+    &lt;div v-show=&quot;true&quot;&gt;v-show&lt;/div&gt;
+
+    &lt;img :src=&quot;imgUrl&quot; alt=&quot;&quot; class=&quot;red&quot; :class=&quot;{ red : flag}&quot; /&gt;
+    &lt;div style=&quot;width: 500px; height: 500px;&quot; :style=&quot;[divStyle, divStyle1]&quot;&gt;i am a  div&lt;/div&gt;
+    &lt;button @click=&quot;fn1(1)&quot;&gt;click&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    const vm = new Vue({
+      el: &#39;#app&#39;,
+      data:{
+        a:1,
+        dom:&#39;&lt;div&gt;ls&lt;/div&gt;&#39;,
+        flag:true,
+        count: 3，
+        imgUrl：&#39;https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg&#39;,
+        divStyle: {width: &#39;100px&#39;, height: &#39;100px&#39;, backgroundColor: &#39;red&#39;},
+        divStyle1: { color: &#39;#fff&#39;},
+        //属性名和函数名不能重复
+      },
+      methods: {
+        fn1(a){
+            console.log(a);
+        }
+      }
+    })
+  &lt;/script&gt;
+</code></pre><ol start="12">
+<li>v-for 循环</li>
+</ol>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+        &lt;!-- 遍历数组，需要添加唯一key值，最好不用index --&gt;
+        &lt;button @click = &quot;onclick&quot;&gt;Click&lt;/button&gt;
+        &lt;div v-for=&quot;item in nameArr&quot; :key=&quot;item.id&quot;&gt;{{item.name}}&lt;/div&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;!-- 遍历对象，(value,key) --&gt;
+        &lt;div v-for=&quot;(value,key) in person&quot; &gt;{{key}} : {{value}}&lt;/div&gt;
+        &lt;br&gt;
+        &lt;!-- 遍历数字 --&gt;
+        &lt;!-- &lt;div v-for=&quot;item in 10&quot;&gt;{{item}}&lt;/div&gt; --&gt;
+        &lt;br&gt;
+        &lt;!-- 遍历字符串 --&gt;
+        &lt;!-- &lt;div v-for=&quot;item in &#39;lushuo&#39;&quot;&gt;{{item}}&lt;/div&gt; --&gt;
+
+        &lt;!-- 渲染多个循环，用&lt;template&gt;包裹，但是&lt;template&gt;不能绑定key值，要绑在内部元素，且每个不能相同 --&gt;
+        &lt;template v-for=&quot;(item,index) in arr&quot;&gt;
+            &lt;div :_key=&quot;`${index}_1`&quot; :key=&quot;`${index}_1`&quot;&gt;{{index}}&lt;/div&gt;
+            &lt;span :_key=&quot;`${index}_2`&quot; :key=&quot;`${index}_2`&quot;&gt;{{item}}&lt;/span&gt;
+        &lt;/template&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+
+        &lt;!-- key值的另一作用：在dom元素相同时，进行区分。如例子中input为相同dom，vue默认会进行复用，导致填的内容不会随着功能切换而改变，加key值解决 --&gt;
+        &lt;div v-if=&quot;flag&quot;&gt;
+            &lt;label for=&quot;name&quot;&gt;姓名&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;name&quot; key=&quot;name&quot;&gt;
+        &lt;/div&gt;
+        &lt;div v-else&gt;
+            &lt;label for=&quot;age&quot;&gt;年龄&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;age&quot; key=&quot;age&quot;&gt;
+        &lt;/div&gt;
+        &lt;button @click=&quot;change&quot;&gt;互换&lt;/button&gt;
+
+    &lt;/div&gt;
+    &lt;script&gt;
+        const vm = new Vue({
+            el:&#39;#app&#39;,
+            data:{
+                arr:[1,2,3],
+                //nameArr:[&#39;ls&#39;,&#39;dh&#39;,&#39;bb&#39;]
+                //后台返回的数据，一般都有一个id对应
+                nameArr:[
+                    {
+                        name:&#39;ls&#39;,
+                        id:201901
+                    },
+                    {
+                        name:&#39;dh&#39;,
+                        id:201902
+                    },
+                    {
+                        name:&#39;bb&#39;,
+                        id:201903
+                    }
+                ],
+                person:{
+                    name:&#39;ls&#39;,
+                    desc:&#39;boy&#39;,
+                    age:23
+                },
+                flag:true
+
+            },
+            methods:{
+                onclick(){
+                    this.nameArr.reverse();
+                },
+                change(){
+                    this.flag =  !this.flag;
+                }
+            }
+
+        })
+    &lt;/script&gt;
+</code></pre><ol start="13">
+<li>v-model 数据双向绑定，value+input语法糖<br><strong><em>修饰符</em></strong><ol>
+<li>v-model.lazy变成value与change事件得语法糖</li>
+<li>v-model.number将输入得数字字符串转成数字</li>
+<li>v-model.trim去掉字符串前后空格</li>
+</ol>
+</li>
+</ol>
+<pre><code>  &lt;div id=&quot;app&quot;&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;content[0]&quot;&gt;&lt;br&gt;
+    &lt;textarea v-model=&quot;content1&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+    {{ content1}}
+
+    &lt;br&gt;
+    &lt;!-- &lt;input type=&quot;checkbox&quot; v-model=&quot;checked1&quot; /&gt;
+    {{ checked1 }} --&gt;
+    &lt;br&gt;
+    &lt;label for=&quot;cg&quot;&gt;1&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; v-model=&quot;checked&quot; id=&quot;cg&quot; value=&quot;cgg&quot; /&gt;
+    &lt;label for=&quot;dg&quot;&gt;2&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; v-model=&quot;checked&quot; id=&quot;dg&quot; value=&quot;dgg&quot; /&gt;
+    &lt;label for=&quot;stg&quot;&gt;3&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; v-model=&quot;checked&quot; id=&quot;stg&quot; value=&quot;stgg&quot; /&gt;
+    &lt;br&gt;
+    {{ checked }} 
+    &lt;!-- 多选存的value值  --&gt;
+
+      &lt;br&gt;
+      &lt;br&gt;
+
+    &lt;label for=&quot;one&quot;&gt;one&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;one&quot;  value=&quot;one&quot; v-model=&quot;picked&quot;/&gt;
+    &lt;label for=&quot;two&quot;&gt;two&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;two&quot;  value=&quot;two&quot; v-model=&quot;picked&quot; /&gt;
+      {{ picked }}
+
+      &lt;br&gt;&lt;br&gt;
+
+    &lt;select v-model=&quot;selected&quot;&gt;
+      &lt;option value=&quot;&quot; disabled&gt;请选择&lt;/option&gt;
+      &lt;option value=&quot;A&quot;&gt;A&lt;/option&gt;
+      &lt;option value=&quot;B&quot;&gt;B&lt;/option&gt;
+      &lt;option value=&quot;C&quot;&gt;C&lt;/option&gt;
+    &lt;/select&gt;
+    {{ selected }}
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;select v-model=&quot;selected&quot; multiple&gt;
+      &lt;option value=&quot;A&quot;&gt;A&lt;/option&gt;
+      &lt;option value=&quot;B&quot;&gt;B&lt;/option&gt;
+      &lt;option value=&quot;C&quot;&gt;C&lt;/option&gt;
+    &lt;/select&gt;
+    {{ selected }}
+
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    const vm = new Vue({
+      el: &#39;#app&#39;,
+      data: {
+        content: [&#39;hello&#39;,&#39;&#39;,&#39;&#39;],
+        content1:[],
+        // checked: true
+        checked: [],
+        checked1: [],
+        picked: &#39;&#39;,
+        //selected: &#39;&#39;
+        selected: [],
+        show: [false,true],
+
+      },
+      mathods:{
+
+      }
+    })
+  &lt;/script&gt;
+</code></pre>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -351,15 +568,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/11/10/测试-3/" rel="prev">
+            <a href="/2019/11/12/vue插值表达式/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                测试</h3>
+                vue插值表达式</h3>
                 <hr>
               </div>
             </a>
@@ -369,15 +586,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/11/10/测试-1/" rel="next">
+            <a href="/2019/11/11/hexo多电脑配置/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                测试</h3>
+                hexo多电脑配置</h3>
                 <hr>
               </div>
             </a>
