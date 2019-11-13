@@ -1062,6 +1062,8 @@ a:hover,a:active {
     -webkit-animation:fade-in .5s
 }
 #bgvideo {
+    /* 修改过 */
+    display: none;
     position:absolute;
     top:0;
     left:0;
@@ -3849,7 +3851,7 @@ li.feature-2 {
 .notice-content {
     display:initial;
     vertical-align:middle;
-    color: #ff0000
+    color: #666
 }
 .headertop {
     position:relative;
@@ -3951,7 +3953,8 @@ li.feature-2 {
         background-attachment:scroll
     }
     .focusinfo .header-tou img {
-        width: 100px !important;
+        width: 120px !important;
+        height: 120px !important;
     }
     .header-info {
         width: 90% !important;
@@ -6223,6 +6226,8 @@ button.botui-actions-buttons-button {
     border-radius:0 6px 6px 0 !important
 }
 .video-container {
+    /* 修改过 */
+    display: none;
     position:relative;
     padding-bottom:56.25%;
     padding-top:30px;

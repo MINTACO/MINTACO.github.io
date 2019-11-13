@@ -1,5 +1,5 @@
 ---
-title: 好用的控制台工具Cmder
+title: 好用的控制台模拟器Cmder
 author: shawn
 avatar: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg'
 authorLink: mintaco.cn

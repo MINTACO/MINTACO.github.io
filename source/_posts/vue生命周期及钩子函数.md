@@ -1,0 +1,67 @@
+---
+title: vue生命周期及钩子函数
+author: shawn
+avatar: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg'
+authorLink: mintaco.cn
+authorAbout: 像风一样自由
+authorDesc: 像风一样自由
+categories: 技术
+comments: true
+tags: VUE
+photos: 'https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg'
+date: 2019-11-13 20:37:11
+keywords:
+description:
+---
+# 1.生命周期图示
+![生命周期](https://i.loli.net/2019/11/13/Sr5LkpGtn7qsVPQ.png)
+# 2. 钩子函数
+```
+<div id="app">{{ name }} {{ age }}</div>
+
+  <script> 
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        name: 'lushuo',
+        age: 23
+      },
+      beforeCreate () {
+        // x
+        // 不能获取data
+        // console.log(this);
+        // console.log(this.$data);
+        console.log('beforeCreate');s
+      },
+      created () {
+        // 调用ajax 
+        // console.log(this.$data);
+        console.log('created');
+      },
+      //挂载
+      beforeMount () {
+        // x
+        console.log(this.$el);
+      },
+      mounted () {
+        // ajax
+        console.log(this.$el);
+      },
+      beforeUpdate () {
+        this.age = 16;
+        console.log('beforeUpdate');
+      },
+      updated () {
+        // this.age = 19;
+        console.log('updated');
+      },
+      beforeDestroy () {
+        // 定时器清除
+        console.log('destroy');
+      },
+      destroyed () {
+        console.log('destroyer');
+      }
+    })
+  </script>
+```

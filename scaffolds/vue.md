@@ -11,5 +11,5 @@ comments: true
 tags: VUE
 keywords: 
 description: 
-photos: https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png
+photos: https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg
 ---

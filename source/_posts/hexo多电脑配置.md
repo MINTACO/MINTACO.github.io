@@ -1,0 +1,36 @@
+---
+title: hexo多电脑配置
+author: shawn
+avatar: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg'
+authorLink: mintaco.cn
+authorAbout: 像风一样自由
+authorDesc: 像风一样自由
+categories: 技术
+comments: true
+tags: Tools
+photos: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png'
+date: 2019-11-11 09:29:26
+keywords:
+description:
+---
+# hexo多台电脑配置
+最近买了新电脑，要把旧电脑上的hexo博客配置转移过来，记录下过程。
+
+## 1.备份博客原文件
+先在github博客仓库新建backup分支，在hexo配置文件_config.yml中添加如下配置：
+```
+# backup
+backup:
+  type: git
+  message: backup my blog of https://mintaco.github.io/
+  repository:
+    github: git@github.com:MINTACO/MINTACO.github.io.git,backup
+```
+其中仓库地址自行更改；
+执行```hexo backup```
+## 2.新电脑安装git,node环境
+安装完后配置git用户名，邮箱及ssh密钥
+## 3.克隆backup分支到新电脑本地
+## 4.复制原电脑中的.ssh文件夹中文件到新电脑的对应文件夹中
+不复制的话没法deploy
+![](https://i.loli.net/2019/11/11/5b3dDQigojXF8x6.png)
