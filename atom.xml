@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-13T07:26:50.863Z</updated>
+  <updated>2019-11-13T13:09:36.132Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue生命周期及钩子函数</title>
+    <link href="/2019/11/13/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0/"/>
+    <id>/2019/11/13/vue生命周期及钩子函数/</id>
+    <published>2019-11-13T12:37:11.000Z</published>
+    <updated>2019-11-13T13:09:36.132Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-生命周期图示&quot;&gt;&lt;a href=&quot;#1-生命周期图示&quot; class=&quot;headerlink&quot; title=&quot;1.生命周期图示&quot;&gt;&lt;/a&gt;1.生命周期图示&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="VUE" scheme="/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue挂载流程，render函数</title>
+    <link href="/2019/11/13/vue%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B%EF%BC%8Crender%E5%87%BD%E6%95%B0/"/>
+    <id>/2019/11/13/vue挂载流程，render函数/</id>
+    <published>2019-11-13T12:21:34.000Z</published>
+    <updated>2019-11-13T12:29:21.991Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-Vue挂载流程图&quot;&gt;&lt;a href=&quot;#1-Vue挂载流程图&quot; class=&quot;headerlink&quot; title=&quot;1.Vue挂载流程图&quot;&gt;&lt;/a&gt;1.Vue挂载流程图&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="VUE" scheme="/tags/VUE/"/>
+    
+  </entry>
   
   <entry>
     <title>计算属性与侦听器</title>
