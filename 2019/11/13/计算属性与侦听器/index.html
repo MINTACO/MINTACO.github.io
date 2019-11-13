@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">MarkDown基本语法 | Shawn&#39;s Blog</title>
+  <title itemprop="name">计算属性与侦听器 | Shawn&#39;s Blog</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/images/favicon.ico">
   
@@ -290,11 +290,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      MarkDown基本语法</h1>
+      计算属性与侦听器</h1>
       <p class="entry-census">
         <span>
           <a href="mintaco.cn">
@@ -306,7 +306,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-10-31<span class="bull">
+        2019-11-13<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -320,64 +320,136 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p># 一级标题<br>## 二级标题<br>### 三级标题<br>。。。<br>最大支持六级标题，注意#后加空格  </p>
-<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>行尾加两个空格</p>
-<h2 id="原文中显示-gt-等符号"><a href="#原文中显示-gt-等符号" class="headerlink" title="原文中显示#,*,&gt;等符号"></a>原文中显示#,*,&gt;等符号</h2><p>加转义符\</p>
-<h2 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h2><p>使用空格字符进行缩进，如<code>&amp;emsp;&amp;emsp;</code>,缩进两字符,注意结尾分号</p>
-<h3 id="html中的常见空格实体（不完全）"><a href="#html中的常见空格实体（不完全）" class="headerlink" title="html中的常见空格实体（不完全）"></a>html中的常见空格实体（不完全）</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">空格分类</th>
-<th style="text-align:left">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">‘&amp;nbsp’</td>
-<td style="text-align:left">不换行空格，全称是 No-Break Space，即按下space键产生的空格。在HTML代码中，连续使用空格键产生此空格，空格不会累加，即在网页中只显示一个空格。只有使用实体才可累加，该空格占据宽度受字体影响。</td>
-</tr>
-<tr>
-<td style="text-align:center">‘&amp;ensp’</td>
-<td style="text-align:left">半角空格，全称En Space。en是字体排印学的计量单位，为em宽度的一半。特性稳健，宽度为中文字符宽度的一半，且不受字体影响。</td>
-</tr>
-<tr>
-<td style="text-align:center">‘&amp;emsp’</td>
-<td style="text-align:left">全角空格，全称是 Em Space。em是字体排印学的计量单位，相当于当前指定的点数。例如，1 em在16px的字体中就是16px。占据的宽度正好是1个中文宽度，而且基本上不受字体影响。</td>
-</tr>
-<tr>
-<td style="text-align:center">‘&amp;thinsp’</td>
-<td style="text-align:left">窄空格，全称是 Thin Space。占据的宽度比较小，它是em之六分之一宽。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="文本强调"><a href="#文本强调" class="headerlink" title="文本强调"></a>文本强调</h2><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><p>文本左右两侧加**，且不能有空格</p>
-<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>文本左右两侧加*，且不能有空格  </p>
-<h3 id="斜体加粗"><a href="#斜体加粗" class="headerlink" title="斜体加粗"></a>斜体加粗</h3><p>文本左右两侧加***，且不能有空格  </p>
-<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>文本左右两侧加~~,且不能有空格</p>
-<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>文本左右两侧加<code>&lt;u&gt;&lt;/u&gt;</code>,且不能有空格</p>
-<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>三个*</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>引用的文字前加&gt;即可，引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;</p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul>
-<li>行内形式：<code>[超链接名](超链接地址 &quot;超链接描述&quot;)</code>  </li>
-<li>参考形式：为参考形式的链接定一个 [名称] 方便我们在文章中多次引用（链接名称可以用字母、数字和空格，但是不分大小写）。</li>
-<li>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要用 &lt; &gt; 包起来，如<code>&lt;https://www.baidu.com&gt;</code></li>
-</ul>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>图片的语法和链接很像。<br>alt text 是替换文本；alt 属性规定在图像无法显示时的替代文本。虽然 alt text 可以不填，但推荐还是填上。Title 是可选项。  </p>
-<ul>
-<li>行内样式<code>![alt text](/path/to/img.jpg &quot;Title&quot;)</code>  </li>
-<li>参考样式</li>
-</ul>
-<pre><code>![alt text][id]   
-[id]: /path/to/img.jpg &quot;Title&quot;
-</code></pre><h2 id="代码块与高亮"><a href="#代码块与高亮" class="headerlink" title="代码块与高亮"></a>代码块与高亮</h2><p>插入程序代码的方式有两种：使用反引号 `（~ 键）、使用缩进（Tab）。</p>
-<ul>
-<li>插入行内代码，即插入一个单词或者一句代码的情况，使用 ` 插入。</li>
-<li>插入多行代码，分别使用三个反引号（<code>`</code>）包裹多行代码。或者使用缩进。  </li>
-</ul>
-<p><br></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>  数字 + 英文句号 + 空格 + 列表内容</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>星号/加号/减号 + 空格 + 列表内容</p>
-<hr>
+          <h1 id="1-计算属性"><a href="#1-计算属性" class="headerlink" title="1.计算属性"></a>1.计算属性</h1><p>虽然插值表达式中可以插入复杂逻辑，但过于臃肿且难以复用，对于复杂逻辑，应使用计算属性。  </p>
+<p><strong>基础例子：</strong></p>
+<pre><code>&lt;div id=&quot;example&quot;&gt;
+  &lt;p&gt;Original message: &quot;{{ message }}&quot;&lt;/p&gt;
+  &lt;p&gt;Computed reversed message: &quot;{{ reversedMessage }}&quot;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm = new Vue({
+  el: &#39;#example&#39;,
+  data: {
+    message: &#39;Hello&#39;
+  },
+  computed: {
+    // 计算属性的 getter
+    reversedMessage: function () {
+      // `this` 指向 vm 实例
+      return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;)
+    }
+  }
+})
+&lt;/script&gt;
+</code></pre><p>计算属性相当于一层缓存，每次都从缓存中取值，只有设计的数据更改后才会重新执行此函数。直接引用，不比写成”reversedMessage()”形式。</p>
+<h2 id="1-1-计算属性与方法比较"><a href="#1-1-计算属性与方法比较" class="headerlink" title="1.1 计算属性与方法比较"></a>1.1 计算属性与方法比较</h2><p>上面的例子在插值表达式中调用方法同样可以实现，如:</p>
+<pre><code>&lt;p&gt;Reversed message: &quot;{{ reversedMessage() }}&quot;&lt;/p&gt;
+// 在组件中
+methods: {
+  reversedMessage: function () {
+    return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;)
+  }
+}
+</code></pre><p>两者的不同：</p>
+<ol>
+<li>计算属性是响应式的，只要message的值没有改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，相当于缓存，不必再次执行函数；</li>
+<li>相比之下，每次重新渲染调用方法总会重新执行函数，费时费力。但是在不需要缓存的情况下可以使用方法。</li>
+</ol>
+<h2 id="1-2-计算属性对象形式"><a href="#1-2-计算属性对象形式" class="headerlink" title="1.2 计算属性对象形式"></a>1.2 计算属性对象形式</h2><p>涉及双向绑定时可以用计算属性的对象形式，不常用。<br><strong>例：</strong></p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+
+    计算相加: 
+    &lt;input type=&quot;text&quot; v-model.number=&quot;firstCount&quot; /&gt; +
+    &lt;input type=&quot;text&quot; v-model.number=&quot;lastCount&quot; /&gt; 
+
+    &lt;p&gt;
+      计算结果: &lt;input type=&quot;text&quot; v-model=&quot;sum&quot; /&gt;
+    &lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+var vm = new Vue({
+  el: &#39;#app&#39;,
+  data: {
+    firstCount: null,
+    lastCount: null,
+  },
+  computed: {
+   sum: {
+          get () {
+            if(!this.firstCount &amp;&amp; !this.lastCount) {
+              return null;
+            }
+            return this.firstCount + this.lastCount;
+          },
+          set (val) {
+            const avg = val / 2;
+            this.firstCount = avg;
+            this.lastCount = avg;
+          }
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre><h1 id="2-侦听器watch"><a href="#2-侦听器watch" class="headerlink" title="2.侦听器watch"></a>2.侦听器watch</h1><pre><code>&lt;div id=&quot;app&quot;&gt;
+    {{ person }}
+
+&lt;/div&gt;
+
+&lt;script&gt;
+  var vm = new Vue({
+    el: &#39;#app&#39;,
+    data: {
+      name: &#39;lushuo&#39;,
+      age: 18,
+      person:&#39;&#39;
+
+    },
+    // created(){
+    //   this.age = 23;
+    // },
+    watch: {
+        // 被观察的属性变化，就会执行相应的函数
+        // name改变触发name函数，age改变触发age函数
+        // 首次刷新页面时不执行，可以配合methods和生命周期函数来实现
+        // name (newVal) {
+        //   // newVal 是更改后的值
+        //   this.person = `姓名：${newVal} 年龄：${this.age}`;
+        // },
+        // age (newVal) {
+        //   this.person = `姓名：${this.name} 年龄：${newVal}`;
+        // }
+        // watch不仅可以写成函数的形式，还可以写成对象的形式
+        // 可以填写其他参数，如immediate：true, 无论有没有数据改变，立即执行
+        // 填写immediate后，就不需要配合methods和生命周期函数了
+        name: {
+          handler (newVal) {
+            setTimeout (() =&gt; {
+              this.person = `姓名：${newVal} 年龄：${this.age}`;
+            }, 2000) 
+          },
+          immediate: true
+        },
+        age: {
+          handler (newVal) {
+            setTimeout (() =&gt; {
+              this.person = `姓名：${this.name} 年龄：${newVal}`;            
+            }, 2000)
+          },
+          immediate: true
+        }
+      }
+  })
+&lt;/script&gt; 
+</code></pre><h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><h2 id="3-1-computed和watch的区别"><a href="#3-1-computed和watch的区别" class="headerlink" title="3.1 computed和watch的区别"></a>3.1 computed和watch的区别</h2><ol>
+<li>computed不可执行异步，watch可执行异步；</li>
+<li>computed可以观察多个数据，watch只观察一个；</li>
+<li>computed可以新生成一个数据，直接在视图中渲染；watch不可，他用的是本身存在的数据，data中存在。</li>
+</ol>
+<h2 id="3-2-computed和methods的区别"><a href="#3-2-computed和methods的区别" class="headerlink" title="3.2 computed和methods的区别"></a>3.2 computed和methods的区别</h2><p>computed有缓存机制，methods无缓存机制。</p>
+<h2 id="3-3-数据查找顺序"><a href="#3-3-数据查找顺序" class="headerlink" title="3.3 数据查找顺序"></a>3.3 数据查找顺序</h2><p><strong>data &gt; methods &gt; computed</strong></p>
 
         </div>
         <!-- .entry-content -->
@@ -406,36 +478,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/10/31/MarkDownPad2常用快捷键/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                MarkDownPad2常用快捷键</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2018/12/12/Hexo-Theme-Sakura/" rel="next">
+            <a href="/2019/11/12/vue插值表达式/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Hexo-Theme-Sakura</h3>
+                vue插值表达式</h3>
                 <hr>
               </div>
             </a>

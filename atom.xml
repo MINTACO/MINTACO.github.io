@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-12T07:06:27.579Z</updated>
+  <updated>2019-11-13T07:26:50.863Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算属性与侦听器</title>
+    <link href="/2019/11/13/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%8E%E4%BE%A6%E5%90%AC%E5%99%A8/"/>
+    <id>/2019/11/13/计算属性与侦听器/</id>
+    <published>2019-11-13T06:13:51.000Z</published>
+    <updated>2019-11-13T07:26:50.863Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-计算属性&quot;&gt;&lt;a href=&quot;#1-计算属性&quot; class=&quot;headerlink&quot; title=&quot;1.计算属性&quot;&gt;&lt;/a&gt;1.计算属性&lt;/h1&gt;&lt;p&gt;虽然插值表达式中可以插入复杂逻辑，但过于臃肿且难以复用，对于复杂逻辑，应使用计算属性。 
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="VUE" scheme="/tags/VUE/"/>
+    
+  </entry>
   
   <entry>
     <title>vue插值表达式</title>
