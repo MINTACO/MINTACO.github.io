@@ -260,3 +260,72 @@ $attrs包含未注册的属性,inheritAttrs:false 使没有被注册的属性也
         })
     </script>
 ```
+## 3.2 子传父
+### 3.2.1 通过引用 ref
+引用 ref 可以用在Dom上/组件上 ，通过this.$refs可以获取dom或者组件实例。  
+不能赋值名字相同的ref，后面的会覆盖前者，除非是v-for生成的循环，例子：```<div ref="dom" v-for="item in 5">hi</div>```,此时this.$refs.dom会输出数组[div,div,div,div,div]。  
+在父组件中通过this.$refs.子组件可以获取子组件的实例，进而获取自组建的数据和方法。
+### 3.2.2 通过函数传值，$emit/$listeners
+$emit主动触发绑定的事件,第一个参数为事件名，第二个参数为要传递的参数
+```
+	<div id="app">
+        <my-cmp @click="func"></my-cmp>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:"#app",
+            methods:{
+                func(data){
+                    console.log(data);
+                }
+            },
+            components:{
+                myCmp:{
+                    template:`<div>
+                                <button @click="handleClick">点击</button>
+                               
+                            </div>`,
+                    methods:{
+                        handleClick(){
+                            this.$emit('click',this.msg);
+                        }
+                    },
+                    data(){
+                        return {
+                            msg:"hello world"
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+```
+$listeners,通过v-on=“$listeners”获得组件上所有通过@绑定的事件，但是不能传参
+```
+	<div id="app">
+        <my-cmp @click="func" @mousedown="func1"></my-cmp>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:"#app",
+            methods:{
+                func(data){
+                    console.log(data);
+                },
+                func1(){
+                    console.log('func1');
+                }
+            },
+            components:{
+                myCmp:{
+                    template:`<div>
+                                
+                                <button v-on="$listeners">click</button>
+                               
+                            </div>`,
+                }
+            }
+        })
+    </script>
+```
+

@@ -34,6 +34,8 @@ description:
     ***this指向***
     1. methods里的函数this指向vue实例
     2. 函数不可写在data里，this指向window
+    
+***组件无法识别点击事件，可以加修饰符native让组件拥有原生属性,例子：***```<my-cmp ref="cmp" @click.native="func"> </my-cmp>```
 
 ```
   <div id="app"> 
@@ -74,7 +76,7 @@ description:
         }
       }
     })
-  </script>
+  </script> 
 ```
 12. v-for 循环
 
