@@ -2,11 +2,11 @@
 prefixName: 
 siteName: Shawn's Blog
 # favicon and site master avatar
-favicon:  https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/favicon.ico
+favicon:  https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/favicon-20191119042042913.ico
 avatar: /img/custom/avatar.jpg
 url: https://mintaco.cn
 description: 纵有疾风起，人生不言弃
-cdn: https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5
+cdn: https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6
 pjax: 1
 # 1开启
 mathjax: 0

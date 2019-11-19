@@ -1,5 +1,5 @@
 ---
-title: BOM
+title: BOM(Browser Object Model 浏览器对象模型)
 author: shawn
 avatar: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg'
 authorLink: mintaco.cn
@@ -25,4 +25,32 @@ description:
 它既是通过 JavaScript 访问浏览器窗口的一个接口，又是 ECMAScript 规定的 Global 对象。这意味着
 在网页中定义的任何一个对象、变量和函数，都以 window 作为其 Global 对象，因此有权访问
 parseInt()等方法。
-## 1.1全局作用域
+## 1.1 全局作用域
+有在全局作用域中声明的变量、函数都会变成 window 对象的属性和方法。但定义全局变量与在 window 对象上直接定义属性还是有一点差别：
+1. 全局变量不能通过 delete 操作符删除，而直接在 window 对象上的定义的属性可以。
+```
+var age = 29;
+window.color = "red";
+//在 IE < 9 时抛出错误，在其他所有浏览器中都返回 false
+delete window.age;
+//在 IE < 9 时抛出错误，在其他所有浏览器中都返回 true
+delete window.color; //returns true
+alert(window.age); //29
+alert(window.color); //undefined
+```
+2. 直接访问未定义的变量会抛出错误，但是访问未定义的window属性则不会，会返回undefined。可以知道某个可能未声明的变量是否存在。
+## 1.2 导航和打开窗口
+**函数**：window.open(URL,窗口目标，特性字符串，是否打开新页面标志)；  
+四个参数中，一般只需要传URL，最后一个参数传_self时新窗口覆盖当前窗口，默认为打开新窗口。  
+特性表：  
+![](https://i.loli.net/2019/11/19/xvFCBrUjIfqQHDL.png)
+表中所列的部分或全部设置选项，都可以通过逗号分隔的名值对列表来指定。其中，名值对以等号
+表示（注意，整个特性字符串中不允许出现空格），如下面的例子所示。
+```
+window.open("http://www.baidu.com","wroxWindow",
+"height=400,width=400,top=10,left=10,resizable=yes");
+```
+**返回值**：新打开窗口的window对象
+**opener属性**：新打开的窗口都有一个opener属性，保存着打开它的原始窗口的window对象。但原始窗口中并没有这样的指针指向弹出窗
+口。
+
