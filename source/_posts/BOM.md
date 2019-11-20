@@ -51,6 +51,29 @@ window.open("http://www.baidu.com","wroxWindow",
 "height=400,width=400,top=10,left=10,resizable=yes");
 ```
 **返回值**：新打开窗口的window对象
-**opener属性**：新打开的窗口都有一个opener属性，保存着打开它的原始窗口的window对象。但原始窗口中并没有这样的指针指向弹出窗
-口。
+**opener属性**：新打开的窗口都有一个opener属性，保存着打开它的原始窗口的window对象。但原始窗口中并没有这样的指针指向弹出窗口。可指定opener为null；
+**opener.close()**：可以关闭本窗口中通过js打开的窗口；
+不同浏览器使用close()方法的策略不同：
+ 1. ff : 无法关闭
+ 2. chrome : 直接关闭
+ 3. ie : 询问用户
+```
+<button>open</button>
+<button>close</button>
+
+<script>
+  var oBtn = document.getElementsByTagName('button')[0];
+  var oBtn1 = document.getElementsByTagName('button')[1];
+  var wroxWin; 
+  oBtn.onclick = function(){
+    wroxWin = window.open("http://www.baidu.com/","wroxWindow",
+        "height=400,width=400,top=10,left=10,resizable=yes");
+    // wroxWin.opener = null;
+    console.log(wroxWin);
+  };
+  oBtn1.onclick = function(){
+    wroxWin.close();
+  }
+</script> 
+```
 
