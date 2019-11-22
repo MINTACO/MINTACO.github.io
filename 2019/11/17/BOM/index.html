@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">测试 | Shawn&#39;s Blog</title>
+  <title itemprop="name">BOM(Browser Object Model 浏览器对象模型) | Shawn&#39;s Blog</title>
   
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/favicon.ico">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/favicon-20191119042042913.ico">
   
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
@@ -73,7 +73,7 @@
     <div class="focusinfo no-select">
       <div class="header-tou">
         <a href="https://mintaco.cn">
-          <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/custom/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/avatar.jpg">
         </a>
       </div>
       <div class="header-info">
@@ -87,7 +87,7 @@
               
                 <li>
                   <a href="http://github.com/MINTACO" target="_blank" class="social-github" title="github">
-                    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/social/github.png">
+                    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/social/github.png">
                   </a>
                 </li>
               
@@ -95,7 +95,7 @@
               
                 <li>
                   <a href="https://weibo.com/u/5287347986?is_hot=1" target="_blank" class="social-github" title="sina">
-                    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/social/sina.png">
+                    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/social/sina.png">
                   </a>
                 </li>
               
@@ -103,7 +103,7 @@
               
                 <li>
                   <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=UWZiZWlmZ2BkZhEgIH8yPjw" target="_blank" class="social-github" title="email">
-                    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/social/email.svg">
+                    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/social/email.svg">
                   </a>
                 </li>
               
@@ -186,7 +186,7 @@
                       <li>
                         <a href="/categories/技术/">
                           <i class="fa fa-code" aria-hidden="true"></i>
-                          技术
+                          开发
                         </a>
                       </li>
                     
@@ -290,11 +290,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/js-cover.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      测试</h1>
+      BOM(Browser Object Model 浏览器对象模型)</h1>
       <p class="entry-census">
         <span>
           <a href="mintaco.cn">
@@ -306,7 +306,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-11-10<span class="bull">
+        2019-11-17<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -320,15 +320,40 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <p>&emsp;&emsp;ECMAScript 是 JavaScript 的核心，但如果要在 Web 中使用 JavaScript，那么 BOM（浏览器对象模<br>型）则无疑才是真正的核心。BOM 提供了很多对象，用于访问浏览器的功能，这些功能与任<br>何网页内容无关。多年来，缺少事实上的规范导致 BOM 既有意思又有问题，因为浏览器提供商会按照各<br>自的想法随意去扩展它。于是，浏览器之间共有的对象就成为了事实上的标准。这些对象在浏览器中得以<br>存在，很大程度上是由于它们提供了与浏览器的互操作性。W3C 为了把浏览器中 JavaScript 最基本的部分<br>标准化，已经将 BOM 的主要方面纳入了 HTML5 的规范中。</p>
+<h1 id="1-window对象"><a href="#1-window对象" class="headerlink" title="1.window对象"></a>1.window对象</h1><p>&emsp;&emsp;BOM 的核心对象是 window，它表示浏览器的一个实例。在浏览器中，window 对象有双重角色，<br>它既是通过 JavaScript 访问浏览器窗口的一个接口，又是 ECMAScript 规定的 Global 对象。这意味着<br>在网页中定义的任何一个对象、变量和函数，都以 window 作为其 Global 对象，因此有权访问<br>parseInt()等方法。</p>
+<h2 id="1-1-全局作用域"><a href="#1-1-全局作用域" class="headerlink" title="1.1 全局作用域"></a>1.1 全局作用域</h2><p>有在全局作用域中声明的变量、函数都会变成 window 对象的属性和方法。但定义全局变量与在 window 对象上直接定义属性还是有一点差别：</p>
+<ol>
+<li>全局变量不能通过 delete 操作符删除，而直接在 window 对象上的定义的属性可以。<pre><code>var age = 29;
+window.color = &quot;red&quot;;
+//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 false
+delete window.age;
+//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 true
+delete window.color; //returns true
+alert(window.age); //29
+alert(window.color); //undefined
+</code></pre></li>
+<li>直接访问未定义的变量会抛出错误，但是访问未定义的window属性则不会，会返回undefined。可以知道某个可能未声明的变量是否存在。<h2 id="1-2-导航和打开窗口"><a href="#1-2-导航和打开窗口" class="headerlink" title="1.2 导航和打开窗口"></a>1.2 导航和打开窗口</h2><strong>函数</strong>：window.open(URL,窗口目标，特性字符串，是否打开新页面标志)；<br>四个参数中，一般只需要传URL，最后一个参数传_self时新窗口覆盖当前窗口，默认为打开新窗口。<br>特性表：<br><img src="https://i.loli.net/2019/11/19/xvFCBrUjIfqQHDL.png" alt><br>表中所列的部分或全部设置选项，都可以通过逗号分隔的名值对列表来指定。其中，名值对以等号<br>表示（注意，整个特性字符串中不允许出现空格），如下面的例子所示。<pre><code>window.open(&quot;http://www.baidu.com&quot;,&quot;wroxWindow&quot;,
+&quot;height=400,width=400,top=10,left=10,resizable=yes&quot;);
+</code></pre><strong>返回值</strong>：新打开窗口的window对象<br><strong>opener属性</strong>：新打开的窗口都有一个opener属性，保存着打开它的原始窗口的window对象。但原始窗口中并没有这样的指针指向弹出窗口。可指定opener为null；<br><strong>opener.close()</strong>：可以关闭本窗口中通过js打开的窗口；<br>不同浏览器使用close()方法的策略不同：<ol>
+<li>ff : 无法关闭</li>
+<li>chrome : 直接关闭</li>
+<li>ie : 询问用户<br><code>`</code><button>open</button><br><button>close</button>
+
+</li>
+</ol>
+</li>
+</ol>
+<p><script><br>  var oBtn = document.getElementsByTagName(‘button’)[0];<br>  var oBtn1 = document.getElementsByTagName(‘button’)[1];<br>  var wroxWin;<br>  oBtn.onclick = function(){<br>    wroxWin = window.open(“<a href="http://www.baidu.com/&quot;,&quot;wroxWindow&quot;">http://www.baidu.com/&quot;,&quot;wroxWindow&quot;</a>,<br>        “height=400,width=400,top=10,left=10,resizable=yes”);<br>    // wroxWin.opener = null;<br>    console.log(wroxWin);<br>  };<br>  oBtn1.onclick = function(){<br>    wroxWin.close();<br>  }<br></script><br><code>`</code></p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
           <div class="reward-open">赏
             <div class="reward-main">
               <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/custom/donate/AliPayQR.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/custom/donate/WeChatQR.jpg"></li>
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/donate/WeChatQR.jpg"></li>
               </ul>
             </div>
           </div>
@@ -351,15 +376,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/11/10/测试-3/" rel="prev">
+            <a href="/2019/11/19/JSON-stringify-JSON-parse技巧/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/category/lab.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/category/lab.png">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                测试</h3>
+                JSON.stringify/JSON.parse技巧</h3>
                 <hr>
               </div>
             </a>
@@ -369,15 +394,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/11/10/测试-1/" rel="next">
+            <a href="/2019/11/15/vue组件/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                测试</h3>
+                vue组件</h3>
                 <hr>
               </div>
             </a>
@@ -550,7 +575,7 @@ $(document).ready(function() {
   </section>
   <div id="mo-nav" class="">
   <div class="m-avatar">
-    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.5/img/custom/avatar.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/avatar.jpg">
   </div>
   <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Shawn's Blog</p>
   <p style="text-align: center; word-spacing: 20px;">
@@ -589,7 +614,7 @@ $(document).ready(function() {
               <li>
                 <a href="/categories/技术/">
                   <i class="fa fa-code" aria-hidden="true"></i>
-                  技术
+                  开发
                 </a>
               </li>
             

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Shawn&#39;s Blog</title>
+  <title itemprop="name">vue组件 | Shawn&#39;s Blog</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/favicon-20191119042042913.ico">
   
@@ -284,455 +284,455 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 0px;"></div>
-<div id="content" class="site-content">
-  
-  <div class="notice" style="margin-top:60px">
-    <i class="iconfont icon-notification">
-    </i>
-    <div class="notice-content">Hello,World</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      vue组件</h1>
+      <p class="entry-census">
+        <span>
+          <a href="mintaco.cn">
+            <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="mintaco.cn">shawn</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-11-15<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  
-  <div class="top-feature-row">
-  <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-  <i class="fa fa-anchor" aria-hidden="true">
-  </i>
-  START:DASH!!</h1>
-  
-</div>
+
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      Discovery</h1>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="1-组件好处"><a href="#1-组件好处" class="headerlink" title="1.组件好处"></a>1.组件好处</h1><p>方便复用，易于维护</p>
+<h1 id="2-组件定义"><a href="#2-组件定义" class="headerlink" title="2.组件定义"></a>2.组件定义</h1><p>分为全局组件和局部组件，组件里的data必须写成函数形式，使每个组件的data有独立的作用域，否则复用时会出现干扰。<br>命名采用大驼峰/小驼峰，用时可以为连字符。<br><strong>注意项</strong></p>
+<ol>
+<li>组件在html中不能写成自闭合标签；</li>
+<li>在html中不能使用大驼峰式，会被解析成小驼峰，以至于找不到组件，最好写成连字符形式。</li>
+</ol>
+<pre><code>
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;hello-world&gt;&lt;/hello-world&gt;
+
+  &lt;/div&gt;
+
+  &lt;script&gt; 
+  //全局组件
+    // Vue.component(&#39;hello-world&#39;, {
+      //组件里的数据要求写成函数
+    //   data () {
+    //     return {
+    //       msg: &#39;hello world&#39;
+    //     }
+    //   },
+    //   template: `&lt;div&gt;{{ msg }}&lt;/div&gt;`
+    // })
+
+    //局部组件
+    const vm = new Vue({
+      el: &#39;#app&#39;,
+      components: {
+        helloWorld: {
+          data () {
+            return {
+              msg: &#39;hello world&#39;
+            }
+          },
+          template: `&lt;div&gt;{{ msg }}&lt;/div&gt;`
+        }
+      }
+    }) 
+  &lt;/script&gt;
+</code></pre><h1 id="3-组件间数据传递"><a href="#3-组件间数据传递" class="headerlink" title="3.组件间数据传递"></a>3.组件间数据传递</h1><h2 id="3-1-父传子"><a href="#3-1-父传子" class="headerlink" title="3.1 父传子"></a>3.1 父传子</h2><h3 id="3-1-1-通过prop向子组件传递数据"><a href="#3-1-1-通过prop向子组件传递数据" class="headerlink" title="3.1.1 通过prop向子组件传递数据"></a>3.1.1 通过prop向子组件传递数据</h3><p>Prop 是在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。</p>
+<pre><code>Vue.component(&#39;blog-post&#39;, {
+  props: [&#39;title&#39;],
+  template: &#39;&lt;h3&gt;{{ title }}&lt;/h3&gt;&#39;
+})
+</code></pre><p>一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 data 中的值一样。  </p>
+<p><strong>prop类型</strong></p>
+<ol>
+<li>字符串数组，如:<code>props: [&#39;title&#39;, &#39;likes&#39;, &#39;isPublished&#39;, &#39;commentIds&#39;, &#39;author&#39;]</code></li>
+<li>对象，在每个prop的值都需要特定类型时，对象的名称和值分别是 prop 各自的名称和类型匹配要求，如:  <pre><code>props: {
+// 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)
+ propA: Number,
+ // 多个可能的类型
+ propB: [String, Number],
+ // 必填的字符串
+ propC: {
+   type: String,
+   required: true
+ },
+ // 带有默认值的数字
+ propD: {
+   type: Number,
+   default: 100
+ },
+ // 带有默认值的对象
+ propE: {
+   type: Object,
+   // 对象或数组默认值必须从一个工厂函数获取
+   default: function () {
+     return { message: &#39;hello&#39; }
+   }
+ },
+ // 自定义验证函数
+ propF: {
+   validator: function (value) {
+     // 这个值必须匹配下列字符串中的一个
+     return [&#39;success&#39;, &#39;warning&#39;, &#39;danger&#39;].indexOf(value) !== -1
+   }
+ }
+ // prop 会在一个组件实例创建之前进行验证，所以实例的属性 (如 data、computed 等) 在 default 或 validator 函数中是不可用的。
+}
+</code></pre>当 prop 验证失败的时候，(开发环境构建版本的) Vue 将会产生一个控制台的警告。</li>
+</ol>
+<p><strong>单向数据流</strong><br>所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致应用的数据流向难以理解。  </p>
+<p>两种常见的试图改变一个 prop 的情形：</p>
+<ol>
+<li>这个 prop 用来传递一个初始值；最好定义一个本地的 data 属性并将这个 prop 用作其初始值：<pre><code>props: [&#39;initialCounter&#39;],
+data: function () {
+return {
+ counter: this.initialCounter
+}
+}
+</code></pre></li>
+<li>这个 prop 以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个 prop 的值来定义一个计算属性：<pre><code>props: [&#39;size&#39;],
+computed: {
+normalizedSize: function () {
+ return this.size.trim().toLowerCase()
+}
+}
+</code></pre><strong><em>注意在 JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变这个对象或数组本身将会影响到父组件的状态。</em></strong></li>
+</ol>
+<h3 id="3-1-2-vm-attrs配合inheritAttrs-false"><a href="#3-1-2-vm-attrs配合inheritAttrs-false" class="headerlink" title="3.1.2 vm.$attrs配合inheritAttrs:false"></a>3.1.2 vm.$attrs配合inheritAttrs:false</h3><p>$attrs包含未注册的属性,inheritAttrs:false 使没有被注册的属性也不会显示在行间</p>
+<pre><code> &lt;div id=&quot;app&quot;&gt;
+        &lt;my-content :title=&quot;title&quot; :content=&quot;content&quot; :index=&quot;index&quot;&gt; &lt;/my-content&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        const vm = new Vue({
+            el:&#39;#app&#39;,
+            data:{
+                title:&quot;标题&quot;,
+                content:&#39;我是内容&#39;,
+                index:20
+            },
+            components:{
+                myContent:{
+                    props:[&#39;title&#39;],
+                    inheritAttrs:false,
+                    created(){
+                        console.log(this.$attrs)
+                    },
+                    template:`&lt;div&gt;
+                            &lt;h2&gt;{{title}}&lt;/h2&gt;
+                            &lt;my-p v-bind=&quot;$attrs&quot;&gt;&lt;/my-p&gt;
+                        &lt;/div&gt;`,
+                    components:{
+                        myP:{
+                            created(){
+                                console.log(this.$attrs)
+                            },
+                            props:[&#39;content&#39;],
+                            template:`&lt;p&gt;{{content}}&lt;/p&gt;`
+
+                        }
+                    }
+
+                }    
+            }
+        })
+    &lt;/script&gt;
+</code></pre><p>输出：<br><img src="https://i.loli.net/2019/11/18/a4vZofGnrjhkRJN.png" alt><br><img src="https://i.loli.net/2019/11/18/LMBoq8gRmO3VCi5.png" alt></p>
+<h3 id="3-1-3-vm-parent-vm-children"><a href="#3-1-3-vm-parent-vm-children" class="headerlink" title="3.1.3 vm.$parent/vm.$children"></a>3.1.3 vm.$parent/vm.$children</h3><pre><code>&lt;div id=&quot;app&quot;&gt;
+        &lt;my-content&gt; &lt;/my-content&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        const vm = new Vue({
+            el:&#39;#app&#39;,
+            data:{
+                title:&quot;标题&quot;,
+                content:&#39;我是内容&#39;,
+                index:20
+            },
+            components:{
+                myContent:{
+                    created(){
+                        console.log(this.$parent);
+                        //父级vue实例
+                        this.title = this.$parent.title;
+                        // this.content = this.$parent.content;
+                    },
+                    mounted(){
+                        console.log(this.$children);
+                        // 数组，包含子组件实例
+                    },
+                    template:`&lt;div&gt;
+                            &lt;h2&gt;{{title}}&lt;/h2&gt;
+                            &lt;my-p &gt;&lt;/my-p&gt;
+                        &lt;/div&gt;`,
+                    components:{
+                        myP:{
+                            created(){
+                                console.log(this.$parent);
+                                this.content = this.$parent.$parent.content;
+                            },
+                            template:`&lt;p&gt;{{content}}&lt;/p&gt;`
+                        }
+                    }
+                }   
+            }
+        })
+    &lt;/script&gt;
+</code></pre><p>输出：<br><img src="https://i.loli.net/2019/11/18/S8IDGJ7UdTsKbVP.png" alt><br><img src="https://i.loli.net/2019/11/18/4ZlAVbN8oXswK7P.png" alt></p>
+<h3 id="3-1-4-provide-inject"><a href="#3-1-4-provide-inject" class="headerlink" title="3.1.4 provide-inject"></a>3.1.4 provide-inject</h3><pre><code>    &lt;div id=&quot;app&quot;&gt;
+            &lt;my-content&gt; &lt;/my-content&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        const vm = new Vue({
+            el:&#39;#app&#39;,
+            provide:{
+                title:&quot;标题&quot;,
+                content:&#39;我是内容&#39;,
+                index:20
+            },
+            components:{
+                myContent:{
+                    inject:[&#39;title&#39;],
+                    template:`&lt;div&gt;
+                            &lt;h2&gt;{{title}}&lt;/h2&gt;
+                            &lt;my-p &gt;&lt;/my-p&gt;
+                        &lt;/div&gt;`,
+                    components:{
+                        myP:{
+                            inject:[&#39;content&#39;],
+                            template:`&lt;p&gt;{{content}}&lt;/p&gt;`
+
+                        }
+                    }
+                }
+            }
+        })
+    &lt;/script&gt;
+</code></pre><h2 id="3-2-子传父"><a href="#3-2-子传父" class="headerlink" title="3.2 子传父"></a>3.2 子传父</h2><h3 id="3-2-1-通过引用-ref"><a href="#3-2-1-通过引用-ref" class="headerlink" title="3.2.1 通过引用 ref"></a>3.2.1 通过引用 ref</h3><p>引用 ref 可以用在Dom上/组件上 ，通过this.$refs可以获取dom或者组件实例。<br>不能赋值名字相同的ref，后面的会覆盖前者，除非是v-for生成的循环，例子：<code>&lt;div ref=&quot;dom&quot; v-for=&quot;item in 5&quot;&gt;hi&lt;/div&gt;</code>,此时this.$refs.dom会输出数组[div,div,div,div,div]。<br>在父组件中通过this.$refs.子组件可以获取子组件的实例，进而获取子组件的数据和方法。</p>
+<h3 id="3-2-2-通过函数传值，-emit-listeners"><a href="#3-2-2-通过函数传值，-emit-listeners" class="headerlink" title="3.2.2 通过函数传值，$emit/$listeners"></a>3.2.2 通过函数传值，$emit/$listeners</h3><p>$emit主动触发绑定的事件,第一个参数为事件名，第二个参数为要传递的参数</p>
+<pre><code>    &lt;div id=&quot;app&quot;&gt;
+        &lt;my-cmp @click=&quot;func&quot;&gt;&lt;/my-cmp&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const vm = new Vue({
+            el:&quot;#app&quot;,
+            methods:{
+                func(data){
+                    console.log(data);
+                }
+            },
+            components:{
+                myCmp:{
+                    template:`&lt;div&gt;
+                                &lt;button @click=&quot;handleClick&quot;&gt;点击&lt;/button&gt;                         
+                            &lt;/div&gt;`,
+                    methods:{
+                        handleClick(){
+                            this.$emit(&#39;click&#39;,this.msg);
+                        }
+                    },
+                    data(){
+                        return {
+                            msg:&quot;hello world&quot;
+                        }
+                    }
+                }
+            }
+        })
+    &lt;/script&gt;
+</code></pre><p>$listeners,通过v-on=“$listeners”获得组件上所有通过@绑定的事件，但是不能传参</p>
+<pre><code>    &lt;div id=&quot;app&quot;&gt;
+        &lt;my-cmp @click=&quot;func&quot; @mousedown=&quot;func1&quot;&gt;&lt;/my-cmp&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const vm = new Vue({
+            el:&quot;#app&quot;,
+            methods:{
+                func(data){
+                    console.log(data);
+                },
+                func1(){
+                    console.log(&#39;func1&#39;);
+                }
+            },
+            components:{
+                myCmp:{
+                    template:`&lt;div&gt;
+                                &lt;button v-on=&quot;$listeners&quot;&gt;click&lt;/button&gt;
+                            &lt;/div&gt;`,
+                }
+            }
+        })
+    &lt;/script&gt;
+</code></pre><h2 id="3-3-兄弟组件传值"><a href="#3-3-兄弟组件传值" class="headerlink" title="3.3 兄弟组件传值"></a>3.3 兄弟组件传值</h2><h3 id="3-3-1-事件总线event-bus"><a href="#3-3-1-事件总线event-bus" class="headerlink" title="3.3.1 事件总线event bus"></a>3.3.1 事件总线event bus</h3><pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;my-input&gt;&lt;/my-input&gt;
+    &lt;hr /&gt;
+    &lt;my-content&gt;&lt;/my-content&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt; 
+    // event bus 事件总线
+    // vue 实例 一个兄弟组件触发的同时另一个监听
+    Vue.prototype.bus = new Vue();
+
+    const vm = new Vue({
+      el: &#39;#app&#39;,
+      components: {
+        myContent: {
+          data () {
+            return {
+              content: &#39;&#39;
+            }
+          },
+          created () {
+            this.bus.$on(&#39;click&#39;, content =&gt; {
+              this.content = content;
+            })
+          },
+          template: `&lt;div&gt;{{ content }}&lt;/div&gt;`
+        },
+
+        myInput: {
+          data () {
+            return {
+              inputVal: &#39;&#39;
+            }
+          },
+          methods: {
+            handleClick () {
+              console.log(this.inputVal);
+              this.bus.$emit(&#39;click&#39;, this.inputVal);
+            }
+          },
+          template: `&lt;div&gt;
+                      &lt;input type=&quot;text&quot; v-model=&quot;inputVal&quot;/&gt;
+                      &lt;button @click=&quot;handleClick&quot;&gt;提交&lt;/button&gt;
+                    &lt;/div&gt;`
+        }
+      }
+    })
+  &lt;/script&gt; 
+</code></pre>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/donate/WeChatQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/11/17/BOM/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                BOM(Browser Object Model 浏览器对象模型)</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/11/15/filter/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                filter</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "8XzhI4RIayQtQICpSGgpzsMM-gzGzoHsz",
+        appKey: "yAk7tfcoTOvbHpq6cYOea4rc",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-  <div class="post-thumb">
-    <a href="/2019/11/19/JSON-stringify-JSON-parse技巧/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/category/lab.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-19 10:11</div>
-      <a href="/2019/11/19/JSON-stringify-JSON-parse技巧/" class="post-title">
-        <h3>JSON.stringify/JSON.parse技巧</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/Javascript/">Javascript<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/19/JSON-stringify-JSON-parse技巧/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="mintaco.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg" itemprop="image" alt="shawn" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="mintaco.cn" itemprop="url" rel="author">shawn</a>
+            </h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/17/BOM/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-17 16:11</div>
-      <a href="/2019/11/17/BOM/" class="post-title">
-        <h3>BOM(Browser Object Model 浏览器对象模型)</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/Javascript/">Javascript<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/17/BOM/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/15/vue组件/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-15 16:11</div>
-      <a href="/2019/11/15/vue组件/" class="post-title">
-        <h3>vue组件</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/VUE/">VUE<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/15/vue组件/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/15/filter/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-15 15:11</div>
-      <a href="/2019/11/15/filter/" class="post-title">
-        <h3>filter</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/VUE/">VUE<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/15/filter/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/13/vue生命周期及钩子函数/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-13 20:11</div>
-      <a href="/2019/11/13/vue生命周期及钩子函数/" class="post-title">
-        <h3>vue生命周期及钩子函数</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/VUE/">VUE<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/13/vue生命周期及钩子函数/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/13/vue挂载流程，render函数/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-13 20:11</div>
-      <a href="/2019/11/13/vue挂载流程，render函数/" class="post-title">
-        <h3>vue挂载流程，render函数</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/VUE/">VUE<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/13/vue挂载流程，render函数/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/13/计算属性与侦听器/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-13 14:11</div>
-      <a href="/2019/11/13/计算属性与侦听器/" class="post-title">
-        <h3>计算属性与侦听器</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/VUE/">VUE<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/13/计算属性与侦听器/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/12/vue插值表达式/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-12 09:11</div>
-      <a href="/2019/11/12/vue插值表达式/" class="post-title">
-        <h3>vue插值表达式</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/VUE/">VUE<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/12/vue插值表达式/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/12/vue指令/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-12 08:11</div>
-      <a href="/2019/11/12/vue指令/" class="post-title">
-        <h3>vue指令</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/VUE/">VUE<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/12/vue指令/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/11/hexo多电脑配置/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-11 09:11</div>
-      <a href="/2019/11/11/hexo多电脑配置/" class="post-title">
-        <h3>hexo多电脑配置</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/Tools/">Tools<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/技术/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/11/hexo多电脑配置/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-
-
-    </main>
-      <!-- 首页默认取最最新文章集 -->
-    <!-- 
-      <nav class="navigator">
-        
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-right"></i></a>
-      </nav>
-     -->
-  </div>
-  
-    <div id="pagination"><a href="/page/2/" class="">Previous</a></div>
-  
+        <hr>
+        <p><i class="iconfont icon-write"></i>像风一样自由</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

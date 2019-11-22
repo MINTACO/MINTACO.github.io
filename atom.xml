@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-13T13:09:36.132Z</updated>
+  <updated>2019-11-19T05:46:43.437Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,113 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSON.stringify/JSON.parse技巧</title>
+    <link href="/2019/11/19/JSON-stringify-JSON-parse%E6%8A%80%E5%B7%A7/"/>
+    <id>/2019/11/19/JSON-stringify-JSON-parse技巧/</id>
+    <published>2019-11-19T02:40:57.000Z</published>
+    <updated>2019-11-19T05:46:43.437Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;JSON.stringify()的作用是将js对象转换为 JSON 字符串，而JSON.parse()可以将JSON字符串转为一个对象。&lt;/p&gt;
+&lt;h1 id=&quot;1-深度拷贝&quot;&gt;&lt;a href=&quot;#1-深度拷贝&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BOM(Browser Object Model 浏览器对象模型)</title>
+    <link href="/2019/11/17/BOM/"/>
+    <id>/2019/11/17/BOM/</id>
+    <published>2019-11-17T08:34:06.000Z</published>
+    <updated>2019-11-20T01:40:55.139Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&amp;emsp;&amp;emsp;ECMAScript 是 JavaScript 的核心，但如果要在 Web 中使用 JavaScript，那么 BOM（浏览器对象模&lt;br&gt;型）则无疑才是真正的核心。BOM
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue组件</title>
+    <link href="/2019/11/15/vue%E7%BB%84%E4%BB%B6/"/>
+    <id>/2019/11/15/vue组件/</id>
+    <published>2019-11-15T08:07:00.000Z</published>
+    <updated>2019-11-19T10:05:50.837Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-组件好处&quot;&gt;&lt;a href=&quot;#1-组件好处&quot; class=&quot;headerlink&quot; title=&quot;1.组件好处&quot;&gt;&lt;/a&gt;1.组件好处&lt;/h1&gt;&lt;p&gt;方便复用，易于维护&lt;/p&gt;
+&lt;h1 id=&quot;2-组件定义&quot;&gt;&lt;a href=&quot;#2-组件定义&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="VUE" scheme="/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>filter</title>
+    <link href="/2019/11/15/filter/"/>
+    <id>/2019/11/15/filter/</id>
+    <published>2019-11-15T07:15:22.000Z</published>
+    <updated>2019-11-15T07:36:58.499Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vue过滤器&quot;&gt;&lt;a href=&quot;#vue过滤器&quot; class=&quot;headerlink&quot; title=&quot;vue过滤器&quot;&gt;&lt;/a&gt;vue过滤器&lt;/h1&gt;&lt;p&gt;在不改变原有数据的情况下改变要显示内容。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="VUE" scheme="/tags/VUE/"/>
+    
+  </entry>
   
   <entry>
     <title>vue生命周期及钩子函数</title>
@@ -125,7 +232,7 @@
     <link href="/2019/11/12/vue%E6%8C%87%E4%BB%A4/"/>
     <id>/2019/11/12/vue指令/</id>
     <published>2019-11-12T00:58:37.000Z</published>
-    <updated>2019-11-12T11:38:06.176Z</updated>
+    <updated>2019-11-19T01:42:14.086Z</updated>
     
     <summary type="html">
     
@@ -172,42 +279,6 @@
     
     
       <category term="Tools" scheme="/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>测试</title>
-    <link href="/2019/11/10/%E6%B5%8B%E8%AF%95-3/"/>
-    <id>/2019/11/10/测试-3/</id>
-    <published>2019-11-10T11:15:18.000Z</published>
-    <updated>2019-11-10T12:08:19.739Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Javascript" scheme="/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>测试</title>
-    <link href="/2019/11/10/%E6%B5%8B%E8%AF%95-2/"/>
-    <id>/2019/11/10/测试-2/</id>
-    <published>2019-11-10T11:14:40.000Z</published>
-    <updated>2019-11-10T12:08:19.739Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="VUE" scheme="/tags/VUE/"/>
     
   </entry>
   
