@@ -57,6 +57,7 @@ window.open("http://www.baidu.com","wroxWindow",
  1. ff : 无法关闭
  2. chrome : 直接关闭
  3. ie : 询问用户
+
 ```
 <button>open</button>
 <button>close</button>
@@ -76,4 +77,60 @@ window.open("http://www.baidu.com","wroxWindow",
   }
 </script> 
 ```
+# 1.3 窗口尺寸
+## 1.3.1可视区尺寸
+document.documentElement.clientWidth
+document.documentElement.clientHeight
+![](https://i.loli.net/2019/11/20/EZJQWcSzdMA4w3R.png)
+## 1.3.2 滚动条滚动距离
+```var scrollTop = document.documentElement.scrollTop || document.body.scrollTop(Left)```
+## 1.3.3 内容高度（宽度）
+Element.scrollHeight (Width)这个只读属性是一个元素内容高度的度量，包括由于溢出导致的视图中不可见内容。
+![](https://i.loli.net/2019/11/20/oOgEMeRGT6qQ3Zn.png)
+# 1.3.4  offsetHeight /Width
+HTMLElement.offsetHeight 是一个只读属性，它返回该元素的像素高度，高度包含该元素的垂直内边距和边框，且是一个整数。
+通常，元素的offsetHeight是一种元素CSS高度的衡量标准，包括元素的边框、内边距和元素的水平滚动条（如果存在且渲染的话），不包含:before或:after等伪类元素的高度。
+对于文档的body对象，它包括代替元素的CSS高度线性总含量高。浮动元素的向下延伸内容高度是被忽略的。 
+这个属性值会被四舍五入为整数值，如果你需要一个浮点数值，请用 element.getBoundingClientRect().
+![](https://i.loli.net/2019/11/20/pMmjAqbvItWC9ha.png)
+
+# 2.location对象
+最有用的BOM对象之一，既是window的属性，又是document的属性。location存储着当前文档的信息，并且将 URL 解析为独立的片段，可以通过location对象的属性访问，下面是所有的location属性：
+![](https://i.loli.net/2019/11/20/TIFaBu38SzwVxWt.png)
+
+## 2.1 获取包含查询字符串的对象
+```
+function getQueryStringArgs(){ 
+ //取得查询字符串并去掉开头的问号
+  var qs = (location.search.length > 0 ? location.search.substring(1) : ""), 
+  
+  //保存数据的对象
+  args = {}, 
+  
+  //取得每一项
+  items = qs.length ? qs.split("&") : [], 
+  item = null, 
+  name = null, 
+  value = null, 
+  //在 for 循环中使用
+  i = 0, 
+  len = items.length; 
+  //逐个将每一项添加到 args 对象中
+  for (i=0; i < len; i++){ 
+      item = items[i].split("="); 
+      name = decodeURIComponent(item[0]); 
+      value = decodeURIComponent(item[1]); 
+      if (name.length) { 
+      args[name] = value; 
+      } 
+ } 
+ 
+ return args; 
+} 
+```
+## 2.2 改变浏览器位置
+1. ```location.assign( URL )```方法:立即打开新 URL 并在浏览器的历史记录中生成一条记录。修改window.location或者location.href也会调用assign方法，效果相同。修改表中location的属性也可改变浏览器位置。
+2. ```location.replace( URL )```,载入新页面且不会生成历史记录，无法回退。
+3. ```location.reload( true(可选) )```,重新载入页面，如果调用 reload()
+时不传递任何参数，页面就会以最有效的方式重新加载。也就是说，如果页面自上次请求以来并没有改变过，页面就会从浏览器缓存中重新加载。如果要强制从服务器重新加载，需加参数true。位于 reload()调用之后的代码可能会也可能不会执行，这要取决于网络延迟或系统资源等因素。为此，最好将 reload()放在代码的最后一行。
 
