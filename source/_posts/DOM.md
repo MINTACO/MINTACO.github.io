@@ -32,21 +32,22 @@ JavaScript 中的所有节点类型都继承自 Node 类型，因此所有节点
 每个节点都有一个 nodeType 属性，用于表明节点的类型。节点类型由在 Node 类型中定义的下列
 12 个数值常量来表示，任何节点类型必居其一：
 
- Node.ELEMENT_NODE(1)；   
- Node.ATTRIBUTE_NODE(2)；   
- Node.TEXT_NODE(3)；   
- Node.CDATA_SECTION_NODE(4)；   
- Node.ENTITY_REFERENCE_NODE(5)；   
- Node.ENTITY_NODE(6)；   
- Node.PROCESSING_INSTRUCTION_NODE(7)；   
- Node.COMMENT_NODE(8)；    
- Node.DOCUMENT_NODE(9)；   
- Node.DOCUMENT_TYPE_NODE(10) 
- Node.DOCUMENT_FRAGMENT_NODE(11)
- Node.NOTATION_NODE(12)。
+ Node.ELEMENT_NODE(1)；   
+ Node.ATTRIBUTE_NODE(2)；   
+ Node.TEXT_NODE(3)；   
+ Node.CDATA_SECTION_NODE(4)；   
+ Node.ENTITY_REFERENCE_NODE(5)；   
+ Node.ENTITY_NODE(6)；   
+ Node.PROCESSING_INSTRUCTION_NODE(7)；   
+ Node.COMMENT_NODE(8)；    
+ Node.DOCUMENT_NODE(9)；   
+ Node.DOCUMENT_TYPE_NODE(10) 
+ Node.DOCUMENT_FRAGMENT_NODE(11)
+ Node.NOTATION_NODE(12)。
 
 **nodeType确定节点类型**  
-```someNode.nodeType```  
+`someNode.nodeType` 
+
 返回值：节点类型的数字值  
 nodeName 节点名  
 nodeValue 内容，对于元素节点，始终为null  
@@ -76,31 +77,30 @@ nodeValue 内容，对于元素节点，始终为null
        return array; 
     }
    ```
-   ***由于IE8 及更早版本将 NodeList
-实现为一个 COM 对象，不能直接截取***  
+   ***由于IE8 及更早版本将 NodeList实现为一个 COM 对象，不能直接截取***  
 
    3. 判断是否有子节点
-   ```hasChildNodes()```在节点包含一或多个子节点的情况下返回 true,比判断length更方便。
+   `hasChildNodes()`在节点包含一或多个子节点的情况下返回 true,比判断length更方便。
 
 
 
 
-1. 同胞节点 ：包含在childNodes 列表中的每个节点相互之间都是同胞节点。  
+2. 同胞节点 ：包含在childNodes 列表中的每个节点相互之间都是同胞节点。  
    previousSibling和 nextSibling 属性
 
 
 ### 2.1.3 操作节点
 父节点基础上的操作
-1. ```appendChild( newNode )``` 
-2. ```insertBefore( newNode,参照节点 )```
-3. ```replaceChild( newNode,要替换的节点 )```  
+1. `parentNode.appendChild( newNode )`
+2. `parentNode.insertBefore( newNode,参照节点 )`
+3. `parentNode.replaceChild( newNode,要替换的节点 )`
    *以上对节点的操作均为剪切，而非复制*
-4. ```removeChild( 要删除的节点 )```
+4. `parentNode.removeChild( 要删除的节点 )`
    
 所有节点公有方法
-1. ```cloneNode( true/false )```   
-   创建调用这个方法的节点的一个完全相同的副本,参数为 true的情况下，执行深复制，也就是复制节点及其整个子节点树；在参数为 false 的情况下，执行浅复制，即只复制节点本身。复制后返回的节点副本属于文档所有，但并没有为它指定父节点。因此，这个节点副本就成为了一个“孤儿”，除非通过 appendChild()、insertBefore()或 replaceChild()将它添加到文档中。  
-例子：  
+1. `cloneNode( true/false )`
+   创建调用这个方法的节点的一个完全相同的副本,参数为 true的情况下，执行深复制，也就是复制节点及其整个子节点树；在参数为 false 的情况下，执行浅复制，即只复制节点本身。复制后返回的节点副本属于文档所有，但并没有为它指定父节点。因此，这个节点副本就成为了一个“孤儿”，除非通过 appendChild()、insertBefore()或 replaceChild()将它添加到文档中。 
+
 ```
 <ul> 
  <li>item 1</li> 
@@ -113,11 +113,96 @@ alert(deepList.childNodes.length); //3（IE < 9）或 7（其他浏览器）
 var shallowList = myList.cloneNode(false); 
 alert(shallowList.childNodes.length); //0
 ```
-***cloneNode()方法不会复制添加到 DOM 节点中的 JavaScript 属性，例如事件处
-理程序等。这个方法只复制特性、（在明确指定的情况下也复制）子节点，其他一切
-都不会复制。IE 在此存在一个 bug，即它会复制事件处理程序，所以我们建议在复制
-之前最好先移除事件处理程序。***
+***cloneNode()方法不会复制添加到 DOM 节点中的 JavaScript 属性，例如事件处理程序等。这个方法只复制特性、（在明确指定的情况下也复制）子节点，其他一切都不会复制。IE 在此存在一个 bug，即它会复制事件处理程序，所以我们建议在复制之前最好先移除事件处理程序。***
 
-2. ```normalize()```
+2. `normalize()`
 
+## 2.2 Document类型
+JavaScript 通过 Document 类型表示文档。在浏览器中，document 对象是 HTMLDocument（继承自 Document 类型）的一个实例，表示整个 HTML 页面。而且，document 对象是 window 对象的一个属性，因此可以将其作为全局对象来访问。  
+特征：  
+ nodeType 的值为 9；   
+ nodeName 的值为"#document"；   
+ nodeValue 的值为 null；   
+ parentNode 的值为 null；   
+ ownerDocument 的值为 null；   
+ 其子节点可能是一个 DocumentType（最多一个）、Element（最多一个）、ProcessingInstruction或 Comment。
+### 2.2.1 常用子节点
+```
+var html = document.documentElement;
+var body = document.body;
+//取得文档标题
+var originalTitle = document.title;
+//取得完整的 URL
+var url = document.URL;
+//取得域名
+var domain = document.domain; 
+//取得来源页面的 URL
+var referrer = document.referrer;
+```
+### 2.2.3 查找元素
+1. getElementById( ID )
+ID:要取得的元素的 ID。如果找到相应的元素则
+返回该元素，如果不存在带有相应 ID 的元素，则返回 null。注意，这里的 ID 必须与页面中元素的 id特性（attribute）严格匹配，包括大小写。  
+如果页面中多个元素的 ID 值相同，getElementById()只返回文档中第一次出现的元素。
+2. getElementsByTagName( 元素标签名 )[]  
+返回一个HTMLCollection对象,动态集合。可以按索引访问，也可以按名称。   可以向方括号中传入数值或字符串形式的索引值。在后台，对数值索引就会调用 item()，而对字符串索引就会调用 namedItem()。  
+最好区分大小写。
 
+```
+var images = document.getElementsByTagName("img");
+alert(images.length); //输出图像的数量
+alert(images[0].src); //输出第一个图像元素的 src 特性
+alert(images.item(0).src); //输出第一个图像元素的 src 特性
+//HTMLCollection 对象还有一个方法，叫做 namedItem()，使用这个方法可以通过元素的 name特性取得集合中的项。  
+<img src="myimage.gif" name="myImage">
+var myImage = images.namedItem("myImage");
+var myImage = images["myImage"];  
+//取得所有元素
+var allElements = document.getElementsByTagName("*");  
+```
+3. getElementsByName() 
+只有 HTMLDocument 类型才有的方法.
+
+```
+<fieldset>     
+<legend>Which color do you prefer?</legend>     
+   <ul>         
+      <li><input type="radio" value="red" name="color" id="colorRed"> 
+          <label for="colorRed">Red</label></li>         
+      <li><input type="radio" value="green" name="color" id="colorGreen">
+         <label for="colorGreen">Green</label></li>         
+      <li><input type="radio" value="blue" name="color" id="colorBlue">
+         <label for="colorBlue">Blue</label></li>     
+   </ul> 
+</fieldset>  
+
+var radios = document.getElementsByName("color");  
+//与 getElementsByTagName() 类似， getElementsByName() 方法也会返回一个 HTMLCollectioin 。
+//但是，对于这里的单选按钮来说， namedItem() 方法则只会取得第一项（因为每一项的 name 特性都相同）  
+
+```
+4. 特殊集合
+ document.anchors ，包含文档中所有带 name 特性的 <a> 元素；
+ document.forms ， 包含文档中所有的 <form> 元素；
+ document.images ，包含文档中所有的 <img> 元素；
+ document.links ，包含文档中所有带 href 特性的 <a> 元素。  
+ 
+ ## 2.3 Element 类型 
+  Element 类型用于表现 XML 或 HTML 元素，提供了对元素标签名、子节点及特性的访问。 
+  特征：
+  nodeType 的值为 1；   
+  nodeName 的值为元素的标签名；   
+  nodeValue 的值为 null ；   
+  parentNode 可能是 Document 或 Element ；   
+  其子节点可能是 Element 、 Text 、 Comment 、 ProcessingInstruction 、 CDATASection 或EntityReference 。 
+
+  ```
+  //取元素名，nodeName/tagName
+   if (element.tagName.toLowerCase() == "div"){
+       //这样最好（适用于任何文档） 
+   }  
+   //操作特性
+   getAttribute() 、 setAttribute( 要设置的特性名 ，值 ) 和 removeAttribute() 
+   //对于style 属性和onclick类似的事件，getAttribute() 返回的是css文本和事件相应代码的字符串，一般不使用 getAttribute() ，而是只使用对象的属性。只有在取得自定义特性值的情况下，才会使用 getAttribute() 方法。
+
+  ```
