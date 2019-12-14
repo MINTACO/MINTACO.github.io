@@ -52,8 +52,8 @@ homePageSortType: -1
 homeArticleShown: 10
 # 背景图片 更好的修改
 bg:
-  # - https://i.loli.net/2019/11/13/QIJO2pdyonlkbe4.jpg
-  - https://i.loli.net/2019/12/13/lANGv53xb9Qcg2Z.png
+  - https://i.loli.net/2019/11/13/QIJO2pdyonlkbe4.jpg
+  # - https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.1/img/cover/waixingrenfeichuan.jpg
   # - https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.1/img/cover/xingqiuren.jpg
   # - https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.1/img/cover/mofang.jpg
 
