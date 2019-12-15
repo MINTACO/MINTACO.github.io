@@ -8,7 +8,7 @@ authorDesc: 像风一样自由
 categories: 技术
 comments: true
 tags: VUE
-photos: 'https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg'
+photos: https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png
 date: 2019-11-15 16:07:00
 keywords:
 description:

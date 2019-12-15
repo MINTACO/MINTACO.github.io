@@ -8,7 +8,7 @@ authorDesc: 像风一样自由
 categories: 技术
 comments: true
 tags: Javascript
-photos: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg'
+photos: https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png
 date: 2019-11-17 16:34:06
 keywords:
 description:

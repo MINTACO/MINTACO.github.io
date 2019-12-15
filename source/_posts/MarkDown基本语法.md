@@ -11,7 +11,7 @@ categories: 技术
 comments: true
 keywords: markdown
 description: markdown语法
-photos: https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code.png
+photos: https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png
 ---
 
 

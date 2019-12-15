@@ -4,7 +4,7 @@ date: 2018-12-20 23:13:48
 keywords: 留言板
 description: 
 comments: true
-photos: https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.1/img/cover/taikongnvhai.jpg
+photos: https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png
 ---
 {% raw %}
 <div class="entry-content">

@@ -8,7 +8,7 @@ authorDesc: 像风一样自由
 categories: 技术
 comments: true
 tags: Javascript
-photos: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/category/lab.png'
+photos: https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png
 date: 2019-11-27 14:43:33
 keywords:
 description:
@@ -197,12 +197,16 @@ var radios = document.getElementsByName("color");
   其子节点可能是 Element 、 Text 、 Comment 、 ProcessingInstruction 、 CDATASection 或EntityReference 。 
 
   ```
-  //取元素名，nodeName/tagName
+  //1.取元素名，nodeName/tagName
    if (element.tagName.toLowerCase() == "div"){
        //这样最好（适用于任何文档） 
    }  
-   //操作特性
+   //2.操作特性
    getAttribute() 、 setAttribute( 要设置的特性名 ，值 ) 和 removeAttribute() 
    //对于style 属性和onclick类似的事件，getAttribute() 返回的是css文本和事件相应代码的字符串，一般不使用 getAttribute() ，而是只使用对象的属性。只有在取得自定义特性值的情况下，才会使用 getAttribute() 方法。
-
+   // 如果特性不存在， setAttribute()则创建该属性并设置相应的值，通过这个方法设置的特性名会被统一为小写形式。推荐通过属性来设置特性。
+   //3.创建元素
+   document.createElement(标签名) 
+   var div = document.createElement("div");
+   创建完后要使用appendChild() 、 insertBefore() 或 replaceChild() 方法将元素插入到文档数中，才会在浏览器中显示。
   ```

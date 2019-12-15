@@ -11,5 +11,5 @@ comments: true
 tags: CSS
 keywords: 
 description: 
-photos: https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png
+photos: https://i.loli.net/2019/12/14/9FaBYsRX1DJcCTH.png
 ---

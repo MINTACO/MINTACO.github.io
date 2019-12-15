@@ -11,5 +11,5 @@ comments: true
 tags: Javascript
 keywords: 
 description: 
-photos: https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/category/lab.png
+photos: https://i.loli.net/2019/12/14/9FaBYsRX1DJcCTH.png
 ---
