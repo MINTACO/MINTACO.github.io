@@ -33,8 +33,8 @@
   mashiro_option.email_name = "";
   mashiro_option.cookie_version_control = "";
   mashiro_option.qzone_autocomplete = false;
-  mashiro_option.site_name = "Shawn's Blog";
-  mashiro_option.author_name = "Shawn's Blog";
+  mashiro_option.site_name = "Darren's Blog";
+  mashiro_option.author_name = "Darren's Blog";
   mashiro_option.site_url = "https://mintaco.cn";
   mashiro_option.v_appId = "8XzhI4RIayQtQICpSGgpzsMM-gzGzoHsz";
   mashiro_option.v_appKey = "yAk7tfcoTOvbHpq6cYOea4rc";
@@ -48,7 +48,7 @@
   /*End of Initial Variables*/
   </script>
   <script type="text/javascript">
-  var bg = "https://i.loli.net/2019/11/13/QIJO2pdyonlkbe4.jpg".split(",");
+  var bg = "https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png".split(",");
   var bgindex = Math.floor(Math.random()*bg.length);
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
@@ -141,7 +141,7 @@
         <span class="logolink moe-mashiro">
           <a href="/">
             <span class="sakurasono"></span>
-            <span class="shironeko">Shawn&#39;s Blog</span>
+            <span class="shironeko">Darren&#39;s Blog</span>
           </a>
         </span>
       </span>
@@ -290,7 +290,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/cover/code2.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -302,7 +302,7 @@
           </a>
         </span>
         <span>
-          <a href="mintaco.cn">shawn</a>
+          <a href="mintaco.cn">Darren</a>
         </span>
         <span class="bull">
         ·</span>
@@ -338,13 +338,64 @@ alert(window.color); //undefined
 </code></pre><strong>返回值</strong>：新打开窗口的window对象<br><strong>opener属性</strong>：新打开的窗口都有一个opener属性，保存着打开它的原始窗口的window对象。但原始窗口中并没有这样的指针指向弹出窗口。可指定opener为null；<br><strong>opener.close()</strong>：可以关闭本窗口中通过js打开的窗口；<br>不同浏览器使用close()方法的策略不同：<ol>
 <li>ff : 无法关闭</li>
 <li>chrome : 直接关闭</li>
-<li>ie : 询问用户<br><code>`</code><button>open</button><br><button>close</button>
+<li>ie : 询问用户</li>
+</ol>
+</li>
+</ol>
+<pre><code>&lt;button&gt;open&lt;/button&gt;
+&lt;button&gt;close&lt;/button&gt;
 
-</li>
+&lt;script&gt;
+  var oBtn = document.getElementsByTagName(&#39;button&#39;)[0];
+  var oBtn1 = document.getElementsByTagName(&#39;button&#39;)[1];
+  var wroxWin; 
+  oBtn.onclick = function(){
+    wroxWin = window.open(&quot;http://www.baidu.com/&quot;,&quot;wroxWindow&quot;,
+        &quot;height=400,width=400,top=10,left=10,resizable=yes&quot;);
+    // wroxWin.opener = null;
+    console.log(wroxWin);
+  };
+  oBtn1.onclick = function(){
+    wroxWin.close();
+  }
+&lt;/script&gt; 
+</code></pre><h1 id="1-3-窗口尺寸"><a href="#1-3-窗口尺寸" class="headerlink" title="1.3 窗口尺寸"></a>1.3 窗口尺寸</h1><h2 id="1-3-1可视区尺寸"><a href="#1-3-1可视区尺寸" class="headerlink" title="1.3.1可视区尺寸"></a>1.3.1可视区尺寸</h2><p>document.documentElement.clientWidth<br>document.documentElement.clientHeight<br><img src="https://i.loli.net/2019/11/20/EZJQWcSzdMA4w3R.png" alt></p>
+<h2 id="1-3-2-滚动条滚动距离"><a href="#1-3-2-滚动条滚动距离" class="headerlink" title="1.3.2 滚动条滚动距离"></a>1.3.2 滚动条滚动距离</h2><p><code>var scrollTop = document.documentElement.scrollTop || document.body.scrollTop(Left)</code></p>
+<h2 id="1-3-3-内容高度（宽度）"><a href="#1-3-3-内容高度（宽度）" class="headerlink" title="1.3.3 内容高度（宽度）"></a>1.3.3 内容高度（宽度）</h2><p>Element.scrollHeight (Width)这个只读属性是一个元素内容高度的度量，包括由于溢出导致的视图中不可见内容。<br><img src="https://i.loli.net/2019/11/20/oOgEMeRGT6qQ3Zn.png" alt></p>
+<h1 id="1-3-4-offsetHeight-Width"><a href="#1-3-4-offsetHeight-Width" class="headerlink" title="1.3.4  offsetHeight /Width"></a>1.3.4  offsetHeight /Width</h1><p>HTMLElement.offsetHeight 是一个只读属性，它返回该元素的像素高度，高度包含该元素的垂直内边距和边框，且是一个整数。<br>通常，元素的offsetHeight是一种元素CSS高度的衡量标准，包括元素的边框、内边距和元素的水平滚动条（如果存在且渲染的话），不包含:before或:after等伪类元素的高度。<br>对于文档的body对象，它包括代替元素的CSS高度线性总含量高。浮动元素的向下延伸内容高度是被忽略的。<br>这个属性值会被四舍五入为整数值，如果你需要一个浮点数值，请用 element.getBoundingClientRect().<br><img src="https://i.loli.net/2019/11/20/pMmjAqbvItWC9ha.png" alt></p>
+<h1 id="2-location对象"><a href="#2-location对象" class="headerlink" title="2.location对象"></a>2.location对象</h1><p>最有用的BOM对象之一，既是window的属性，又是document的属性。location存储着当前文档的信息，并且将 URL 解析为独立的片段，可以通过location对象的属性访问，下面是所有的location属性：<br><img src="https://i.loli.net/2019/11/20/TIFaBu38SzwVxWt.png" alt></p>
+<h2 id="2-1-获取包含查询字符串的对象"><a href="#2-1-获取包含查询字符串的对象" class="headerlink" title="2.1 获取包含查询字符串的对象"></a>2.1 获取包含查询字符串的对象</h2><pre><code>function getQueryStringArgs(){ 
+ //取得查询字符串并去掉开头的问号
+  var qs = (location.search.length &gt; 0 ? location.search.substring(1) : &quot;&quot;), 
+
+  //保存数据的对象
+  args = {}, 
+
+  //取得每一项
+  items = qs.length ? qs.split(&quot;&amp;&quot;) : [], 
+  item = null, 
+  name = null, 
+  value = null, 
+  //在 for 循环中使用
+  i = 0, 
+  len = items.length; 
+  //逐个将每一项添加到 args 对象中
+  for (i=0; i &lt; len; i++){ 
+      item = items[i].split(&quot;=&quot;); 
+      name = decodeURIComponent(item[0]); 
+      value = decodeURIComponent(item[1]); 
+      if (name.length) { 
+      args[name] = value; 
+      } 
+ } 
+
+ return args; 
+} 
+</code></pre><h2 id="2-2-改变浏览器位置"><a href="#2-2-改变浏览器位置" class="headerlink" title="2.2 改变浏览器位置"></a>2.2 改变浏览器位置</h2><ol>
+<li><code>location.assign( URL )</code>方法:立即打开新 URL 并在浏览器的历史记录中生成一条记录。修改window.location或者location.href也会调用assign方法，效果相同。修改表中location的属性也可改变浏览器位置。</li>
+<li><code>location.replace( URL )</code>,载入新页面且不会生成历史记录，无法回退。</li>
+<li><code>location.reload( true(可选) )</code>,重新载入页面，如果调用 reload()<br>时不传递任何参数，页面就会以最有效的方式重新加载。也就是说，如果页面自上次请求以来并没有改变过，页面就会从浏览器缓存中重新加载。如果要强制从服务器重新加载，需加参数true。位于 reload()调用之后的代码可能会也可能不会执行，这要取决于网络延迟或系统资源等因素。为此，最好将 reload()放在代码的最后一行。</li>
 </ol>
-</li>
-</ol>
-<p><script><br>  var oBtn = document.getElementsByTagName(‘button’)[0];<br>  var oBtn1 = document.getElementsByTagName(‘button’)[1];<br>  var wroxWin;<br>  oBtn.onclick = function(){<br>    wroxWin = window.open(“<a href="http://www.baidu.com/&quot;,&quot;wroxWindow&quot;">http://www.baidu.com/&quot;,&quot;wroxWindow&quot;</a>,<br>        “height=400,width=400,top=10,left=10,resizable=yes”);<br>    // wroxWin.opener = null;<br>    console.log(wroxWin);<br>  };<br>  oBtn1.onclick = function(){<br>    wroxWin.close();<br>  }<br></script><br><code>`</code></p>
 
         </div>
         <!-- .entry-content -->
@@ -378,7 +429,7 @@ alert(window.color); //undefined
           
             <a href="/2019/11/19/JSON-stringify-JSON-parse技巧/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/category/lab.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/category/lab.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png">
               </div>
               <span class="label">
               Previous Post</span>
@@ -396,7 +447,7 @@ alert(window.color); //undefined
           
             <a href="/2019/11/15/vue组件/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png">
               </div>
               <span class="label">
               Next Post</span>
@@ -426,11 +477,11 @@ alert(window.color); //undefined
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="mintaco.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg" itemprop="image" alt="shawn" height="70" width="70"></a>
+          <a href="mintaco.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg" itemprop="image" alt="Darren" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="mintaco.cn" itemprop="url" rel="author">shawn</a>
+            <a href="mintaco.cn" itemprop="url" rel="author">Darren</a>
             </h3>
           </div>
         </div>
@@ -487,7 +538,7 @@ alert(window.color); //undefined
         <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
         <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
       </div>
-      <p style="color: #666666;">&copy 2019 || Shawn</p>
+      <p style="color: #666666;">&copy 2019 || Darren</p>
     </div>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
@@ -577,7 +628,7 @@ $(document).ready(function() {
   <div class="m-avatar">
     <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/avatar.jpg">
   </div>
-  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Shawn's Blog</p>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Darren's Blog</p>
   <p style="text-align: center; word-spacing: 20px;">
     
       
