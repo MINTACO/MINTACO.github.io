@@ -5065,7 +5065,7 @@ i.iconfont.js-toggle-search.iconsearch {
     background-color:#eee
 }
 ::-webkit-scrollbar-thumb {
-    background-color:#336699 !important
+    background-color:#69d2e7
 }
 @keyframes poi-deg {
     0% {
@@ -6955,10 +6955,11 @@ to {
     user-select:none
 }
 .scrollbar {
+    color: #336699!important;
     position:fixed;
     top:0;
     height:3px;
-    background:#336699 !important;
+    background:#bebebe;
     transition-property:width,background;
     transition-duration:1s,1s;
     z-index:99999

@@ -1,6 +1,6 @@
 ---
 title: JSON.stringify/JSON.parse技巧
-author: Darren
+author: shawn
 avatar: 'https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg'
 authorLink: mintaco.cn
 authorAbout: 像风一样自由
