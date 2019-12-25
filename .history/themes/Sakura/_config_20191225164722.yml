@@ -27,7 +27,7 @@ menus:
     Javascript: {path: /tags/Javascript/, fa: fa fa-chrome }, 
     CSS: {path: /tags/CSS/, fa: fa fa-css3 }, 
     VUE: {path: /tags/VUE/, fa: fa fa-vimeo },
-    Python: {path: /tags/Python/, fa: fa fa-file-text }, 
+    Python: {path: /tags/Python/, fa: fa fa-vimeo }, 
     Tools: {path: /tags/Tools/, fa: fa fa-cog },
     
     #番组: {path: /bangumi/, fa: fa-film faa-vertical }, 

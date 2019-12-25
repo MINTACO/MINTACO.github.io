@@ -8,7 +8,7 @@ authorAbout: 像风一样自由
 authorDesc: 像风一样自由
 categories: 开发
 comments: true
-tags: VUE
+tags: Python
 keywords: 
 description: 
 photos: https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg
