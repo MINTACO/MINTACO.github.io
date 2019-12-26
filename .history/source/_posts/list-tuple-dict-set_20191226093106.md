@@ -8,12 +8,12 @@ authorDesc: 像风一样自由
 categories: 开发
 comments: true
 tags: Python
-photos: https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png
+photos: 'https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg'
 date: 2019-12-25 10:34:57
 keywords:
 description:
 ---
-**转载于[廖雪峰官网](https://www.liaoxuefeng.com/)《python教程》**
+**转载于[廖雪峰官网](https://www.liaoxuefeng.com/)python教程**
 # list
 有序集合，可随时添加和删除其中的元素，例：`name = ['Michael', 'Bob', 'Tracy']`
 ## list操作

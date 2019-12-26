@@ -8,7 +8,7 @@ authorDesc: 像风一样自由
 categories: 开发
 comments: true
 tags: Python
-photos: https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png
+photos: 'https://i.loli.net/2019/11/12/UmZdgG8HuJ1AMPb.jpg'
 date: 2019-12-25 10:34:57
 keywords:
 description:
