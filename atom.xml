@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-12-25T08:43:59.854Z</updated>
+  <updated>2019-12-26T01:51:34.426Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>list,tuple,dict,set</title>
-    <link href="/2019/12/25/list-tuple-dict-set/"/>
-    <id>/2019/12/25/list-tuple-dict-set/</id>
-    <published>2019-12-25T02:34:57.000Z</published>
-    <updated>2019-12-25T08:43:59.854Z</updated>
+    <title>conda命令</title>
+    <link href="/2019/12/26/conda%E5%91%BD%E4%BB%A4/"/>
+    <id>/2019/12/26/conda命令/</id>
+    <published>2019-12-26T01:23:32.000Z</published>
+    <updated>2019-12-26T01:51:34.426Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,34 @@
       
         
         
-          &lt;h1 id=&quot;list&quot;&gt;&lt;a href=&quot;#list&quot; class=&quot;headerlink&quot; title=&quot;list&quot;&gt;&lt;/a&gt;list&lt;/h1&gt;&lt;p&gt;有序集合，可随时添加和删除其中的元素，例：&lt;code&gt;name = [&amp;#39;Michael&amp;#39;,
+          &lt;p&gt;&lt;strong&gt;转载于微风阳光博客&lt;a href=&quot;https://www.cnblogs.com/cqliu/p/11199771.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Tools" scheme="/tags/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>list,tuple,dict,set</title>
+    <link href="/2019/12/25/list-tuple-dict-set/"/>
+    <id>/2019/12/25/list-tuple-dict-set/</id>
+    <published>2019-12-25T02:34:57.000Z</published>
+    <updated>2019-12-26T01:32:19.180Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;转载于&lt;a href=&quot;https://www.liaoxuefeng.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;廖雪峰官网&lt;/a&gt;《python教程》&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;list&quot;&gt;&lt;a
         
       
     
@@ -479,26 +506,6 @@
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Tools" scheme="/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-11-10T12:08:19.724Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="转载" scheme="/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
       <category term="Tools" scheme="/tags/Tools/"/>
