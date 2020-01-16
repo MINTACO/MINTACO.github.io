@@ -67,7 +67,7 @@ Python内置了字典：dict的支持，dict全称dictionary，在其他语言�
     1. key in dict   返回布尔值
     2. dict.get(key,自定义value(可省略))   存在返回对应的value，不存在返回None或者自定义的value
 3. 删除key和对应的value
-`dict.pop(key)/del dict['key']`
+dict.pop(key)/del dict['key']
 
 **dict内部存放的顺序和key放入的顺序是没有关系的,dict的key必须是不可变对象**
 
