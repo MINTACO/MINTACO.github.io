@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-12-26T01:51:34.426Z</updated>
+  <updated>2020-01-27T05:50:25.929Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js函数</title>
+    <link href="/2020/01/26/js%E5%87%BD%E6%95%B0/"/>
+    <id>/2020/01/26/js函数/</id>
+    <published>2020-01-26T08:53:35.000Z</published>
+    <updated>2020-01-27T05:50:25.929Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;编程讲究高内聚，弱耦合，由此正确使用函数是非常重要。&lt;/p&gt;
+&lt;h1 id=&quot;1-定义&quot;&gt;&lt;a href=&quot;#1-定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>typeof,类型转换</title>
+    <link href="/2020/01/22/typeof-%E6%B5%85%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    <id>/2020/01/22/typeof-浅类型转换/</id>
+    <published>2020-01-22T07:24:52.000Z</published>
+    <updated>2020-01-26T08:52:57.382Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-typeof&quot;&gt;&lt;a href=&quot;#1-typeof&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器及js入门</title>
+    <link href="/2020/01/15/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8Ajs%E5%85%A5%E9%97%A8/"/>
+    <id>/2020/01/15/浏览器及js入门/</id>
+    <published>2020-01-15T02:42:57.000Z</published>
+    <updated>2020-01-26T08:52:53.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-浏览器发展&quot;&gt;&lt;a href=&quot;#1-浏览器发展&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>conda命令</title>
@@ -47,7 +126,7 @@
     <link href="/2019/12/25/list-tuple-dict-set/"/>
     <id>/2019/12/25/list-tuple-dict-set/</id>
     <published>2019-12-25T02:34:57.000Z</published>
-    <updated>2020-01-07T10:48:06.181Z</updated>
+    <updated>2020-01-08T01:07:45.030Z</updated>
     
     <summary type="html">
     
@@ -437,71 +516,6 @@
           &lt;h1 id=&quot;Cmder安装及简单配置&quot;&gt;&lt;a href=&quot;#Cmder安装及简单配置&quot; class=&quot;headerlink&quot; title=&quot;Cmder安装及简单配置&quot;&gt;&lt;/a&gt;Cmder安装及简单配置&lt;/h1&gt;&lt;h2 id=&quot;1-cmder简介&quot;&gt;&lt;a
         
       
-    
-    </summary>
-    
-      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="Tools" scheme="/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>又一个普通的周末</title>
-    <link href="/2019/11/10/%E5%8F%88%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E7%9A%84%E5%91%A8%E6%9C%AB/"/>
-    <id>/2019/11/10/又一个普通的周末/</id>
-    <published>2019-11-10T10:10:18.000Z</published>
-    <updated>2019-12-26T02:11:30.667Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;周末总是睡不够，今天是lol总决赛的日子，希望FPX赢吧&lt;/p&gt;
-
-        
-      
-    
-    </summary>
-    
-      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MarkDownPad2常用快捷键</title>
-    <link href="/2019/10/31/MarkDownPad2%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>/2019/10/31/MarkDownPad2常用快捷键/</id>
-    <published>2019-10-31T08:59:52.000Z</published>
-    <updated>2019-12-26T02:11:30.667Z</updated>
-    
-    <summary type="html">
-    
-      markdownpad2快捷键
-    
-    </summary>
-    
-      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="Tools" scheme="/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MarkDown基本语法</title>
-    <link href="/2019/10/31/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
-    <id>/2019/10/31/MarkDown基本语法/</id>
-    <published>2019-10-31T08:58:44.000Z</published>
-    <updated>2019-12-26T02:11:30.667Z</updated>
-    
-    <summary type="html">
-    
-      markdown语法
     
     </summary>
     
