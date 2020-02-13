@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: 开发 | Darren&#39;s Blog</title>
+  <title itemprop="name">原型，原型链，call/apply | Darren&#39;s Blog</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/favicon-20191119042042913.ico">
   
@@ -291,374 +291,305 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      原型，原型链，call/apply</h1>
+      <p class="entry-census">
+        <span>
+          <a href="mintaco.cn">
+            <img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="mintaco.cn">Darren</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-2-10<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">编程</h1>
-    <span class="cat-des">
-      <p>Coding for Love</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/11/10/测试-1/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/11/10/测试-1/">
-    测试</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-11-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/11/10/测试-1/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/11/10/好用的控制台工具Cmder/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/11/10/好用的控制台工具Cmder/">
-    好用的控制台模拟器Cmder</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-11-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/11/10/好用的控制台工具Cmder/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/11/10/又一个普通的周末/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/11/10/又一个普通的周末/">
-    又一个普通的周末</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-11-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/11/10/又一个普通的周末/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/31/MarkDownPad2常用快捷键/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/31/MarkDownPad2常用快捷键/">
-    MarkDownPad2常用快捷键</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-31</div>
-    <p>
-    markdownpad2快捷键</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/31/MarkDownPad2常用快捷键/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/31/MarkDown基本语法/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/31/MarkDown基本语法/">
-    MarkDown基本语法</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-31</div>
-    <p>
-    markdown语法</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/31/MarkDown基本语法/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!-- 
-      <nav class="navigator">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-        <a class="extend prev" rel="prev" href="/categories/开发/page/2/"><i class="iconfont icon-back"></i></a><a class="page-number" href="/categories/开发/">1</a><a class="page-number" href="/categories/开发/page/2/">2</a><span class="page-number current">3</span>
-      </nav>
-     -->
-    
-  </div>
+        <div class="entry-content">
+          <h1 id="1-原型"><a href="#1-原型" class="headerlink" title="1.原型"></a>1.原型</h1><h1 id="1-1-原型概念"><a href="#1-1-原型概念" class="headerlink" title="1.1 原型概念"></a>1.1 原型概念</h1><p>原型是<strong>function对象</strong>的一个属性，它定义了构造函数制造出的对象的公共祖先。这个属性是系统自带的，在函数出生的时候即被定义。通过该构造函数产生的对象，可以继承该原型的属性和方法。<strong>原型也是对象</strong>。    </p>
+<p>可以形象化的理解为：构造函数.prototype是通过构造函数构造出的对象的父级。</p>
+<p><strong><em>只有function对象有原型</em></strong></p>
+<pre><code>//利用原型特点，可以提取公有属性
+// Car.prototype.carName = &quot;BMW&quot;;
+// Car.prototype.length = 5000;
+Car.prototype = {
+    carName : &#39;BMW&#39;,
+    length : 5000
+}
+function Car(owner, color){
+    this.owner = owner;
+    this.color = color;
+    this.length = 1000;   
+}
+
+var car = new Car(&#39;Darren&#39;, &#39;black&#39;)
+console.log(car.length);  //1000   自身有属性则优先级高于原型上的属性
+car.carName = &#39;Benz&#39;;  //不会修改原型上的属性，修改的只是自身的属性
+delete car.carName;    //true  删除的只是自身的属性，不可能通过构造出的对象修改原型上的属性。
+// 除非直接操作原型。
+
+</code></pre><h2 id="1-2-constructor属性"><a href="#1-2-constructor属性" class="headerlink" title="1.2 constructor属性"></a>1.2 constructor属性</h2><p>constructor属性：构造器，返回实例的构造函数，是<strong>原型自带</strong>的属性，可以手动更改，例如：<br><img src="https://i.loli.net/2020/02/12/1x4QwiuLtnUk6lX.png" alt="constructor.png"></p>
+<pre><code>function Person(){
+
+}
+
+var person = new Person();
+
+console.log(person.constructor);  //function Person(){}  从原型继承而来
+
+function Student(){}
+
+Person.prototype.constructor = Student;
+
+console.log(person.constructor);  //function Student(){}
+</code></pre><h1 id="2-原型链"><a href="#2-原型链" class="headerlink" title="2.原型链"></a>2.原型链</h1><h2 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h2><p>定义:像作用域链一样访问的原型链，通过<strong>proto</strong>来串联。</p>
+<pre><code>function Person(){
+    // var this = {
+    //     __proto__ : Person.prototype   
+    //}
+    //链接到原型，可以被修改
+}
+
+var person = new Person();
+console.log(person.__proto__)   //对象查看原型，通过__proto__
+</code></pre><p>原型链示意:</p>
+<pre><code>//绝大多数对象原型链的尽头都是Object.prototype,即Grand.prototype.__proto__ = Object.prototype
+
+Grand.prototype.age = 90;
+function Grand(){
+
+}
+var grand = new Grand();
+
+Father.prototype = grand;
+
+function Father(){
+    this.name = &#39;father&#39;;
+}
+var father = new Father();
+
+Son.prototype = father;
+
+function Son(){
+
+}
+var son = new Son();
+
+console.log(son.age);//90
+</code></pre><h2 id="2-1-特殊情况"><a href="#2-1-特殊情况" class="headerlink" title="2.1 特殊情况"></a>2.1 特殊情况</h2><pre><code>var obj = {} 
+//对象字面量也有原型，等同于 var obj = new Object();开发时必须用字面量形式定义
+//obj.__proto__ = Object.prototype
+
+</code></pre><p><strong>Object.create( null/object )</strong></p>
+<pre><code>//用法
+Person.prototype.name = &#39;Darren&#39;;
+function Person(){
+
+}
+
+var person = Object.create(Person.prototype);
+
+//特殊情况：在以null作为原型构造出的对象没有原型
+var obj = Object.create( null );
+console.log(obj.__proto__);   //undefined
+//因为有这个特例，所以才说绝大多数对象继承自Object.prototype,而不是全部
+</code></pre><h2 id="2-3-引申"><a href="#2-3-引申" class="headerlink" title="2.3 引申"></a>2.3 引申</h2><pre><code>//平时我们用的num.toString(),boolean.toString()就是由于包装类的存在而调用了原型链上的toString()方法
+//像undefined这种原始值或者null则没有原型，即不能用toString()方法
+
+123.toString();  //报错，因为js会首先识别成浮点型
+var num = 123;
+num.toString();  //正确用法
+
+var obj = {};
+obj.toString()    //[object Object]
+//对象调用toString即调用Object.prototype上的toString()方法
+//num,boolean值调用的则是自身包装类上重写的toString()方法
+//num.toString() --&gt; new Number(num).toString()
+Number.prototype.toString = function(){
+    //重写的方法
+}
+Number.prototype.__proto__ = Object.prototype   //优先使用自身的方法
+
+//Number,Array,String,Boolean都重写了toString()方法
+
+//本身的方法输出的结果平时没啥用，但可用作区分数组与对象，例如
+Object.prototype.toString.call([]);  //&quot;[object Array]&quot;
+var obj = {};
+Object.prototype.toString.call(obj);  //&quot;[object Object]&quot;
+</code></pre><p><strong>区分数组与对象的三种方法：</strong>  </p>
+<ol>
+<li>constructor</li>
+<li>instanceof</li>
+<li>Object.prototype.toString()</li>
+</ol>
+<h1 id="3-call-apply"><a href="#3-call-apply" class="headerlink" title="3.call/apply"></a>3.call/apply</h1><h2 id="3-1-作用"><a href="#3-1-作用" class="headerlink" title="3.1 作用"></a>3.1 作用</h2><ol>
+<li>改变this指向</li>
+</ol>
+<pre><code>function test(){
+
+}
+
+test()  &lt;==&gt;  test.call()  函数执行的原本形态
+
+//用法
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+}
+
+var obj = {};
+
+Person.call(obj, &#39;Darren&#39;, 23)
+//此时Person中的this指向变为obj，call得后续参数为实参列表
+
+</code></pre><ol start="2">
+<li>可以借助改变this指向实现共享方法</li>
+</ol>
+<pre><code>function Person(name, age){
+   this.name = name;
+   this.age = age;
+}
+
+function Student(name, age, sex, score){
+   Person.call(this, name, age);
+   this.sex = sex;
+   this.score = score;
+
+}
+var st = new Student( &#39;Darren&#39;, 23, &#39;male&#39;, 100 )
+</code></pre><h2 id="3-2-call-apply区别"><a href="#3-2-call-apply区别" class="headerlink" title="3.2 call/apply区别"></a>3.2 call/apply区别</h2><p>传参形式不同，call可以一个个传实参进去，apply只能传实参列表，如下所示：</p>
+<pre><code>function Person(name, age){
+   this.name = name;
+   this.age = age;
+}
+
+function Student(name, age, sex, score){
+   Person.apply(this, [name, age]);
+   this.sex = sex;
+   this.score = score;
+
+}
+var st = new Student( &#39;Darren&#39;, 23, &#39;male&#39;, 100 )
+
+</code></pre>
+        </div>
+        <!-- .entry-content -->
+        <!-- <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.6/img/custom/donate/WeChatQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/02/12/继承，命名空间，对象枚举/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                继承，命名空间，对象枚举</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/02/09/对象，包装类/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                对象，包装类</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "8XzhI4RIayQtQICpSGgpzsMM-gzGzoHsz",
+        appKey: "yAk7tfcoTOvbHpq6cYOea4rc",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="mintaco.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.3/img/custom/avatar.jpg" itemprop="image" alt="Darren" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="mintaco.cn" itemprop="url" rel="author">Darren</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>像风一样自由</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/11/10/测试-1/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MINTACO/cdn@1.4/img/tags/css-cover.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/11/10/测试-1/">
-    测试</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-11-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/11/10/测试-1/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/11/10/好用的控制台工具Cmder/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/11/10/好用的控制台工具Cmder/">
-    好用的控制台模拟器Cmder</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-11-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/11/10/好用的控制台工具Cmder/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/11/10/又一个普通的周末/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/11/10/又一个普通的周末/">
-    又一个普通的周末</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-11-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/11/10/又一个普通的周末/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/31/MarkDownPad2常用快捷键/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/31/MarkDownPad2常用快捷键/">
-    MarkDownPad2常用快捷键</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-31</div>
-    <p>
-    markdownpad2快捷键</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/31/MarkDownPad2常用快捷键/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/31/MarkDown基本语法/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/31/MarkDown基本语法/">
-    MarkDown基本语法</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-31</div>
-    <p>
-    markdown语法</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/31/MarkDown基本语法/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

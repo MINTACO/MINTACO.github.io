@@ -329,11 +329,11 @@
         <div class="entry-content">
           <p>编程讲究高内聚，弱耦合，由此正确使用函数是非常重要。</p>
 <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h1><ol>
-<li>函数声明<pre><code>function demo() {
+<li><strong>函数声明</strong><pre><code>function demo() {
     ...
 }
 </code></pre></li>
-<li>函数表达式<pre><code>//命名函数表达式
+<li><strong>函数表达式</strong><pre><code>//命名函数表达式
 var demo = function abc() {
     ...
 }
@@ -343,7 +343,195 @@ var demo = function() {
 }
 </code></pre></li>
 </ol>
-<h1 id="2-组成形式"><a href="#2-组成形式" class="headerlink" title="2.组成形式"></a>2.组成形式</h1><p>函数名称，参数（形参，实参），返回值。</p>
+<h1 id="2-组成形式"><a href="#2-组成形式" class="headerlink" title="2.组成形式"></a>2.组成形式</h1><p>函数名称，参数（形参，实参），返回值。<br><strong><em>在js里参数不规定位数和类型，实参比形参多或者形参比实参多都不会报错。</em></strong><br>在函数内部存在类数组arguments，接收实参，即实参列表。函数名.length则可以得到形参的个数。在不定参数个数时，可以直接获取arguments进行操作。arguments和实参相映射。</p>
+<pre><code>function demo(a, b, c, d) {
+    console.log(arguments);
+    console.log(arguments.length);
+    console.log(demo.length);
+}
+
+demo(1,2,3)
+</code></pre><h1 id="3-递归"><a href="#3-递归" class="headerlink" title="3.递归"></a>3.递归</h1><ol>
+<li><strong>找规律</strong></li>
+<li><strong>找出口</strong></li>
+</ol>
+<pre><code>//n阶乘
+// n! = n * (n-1)!
+function mul( n ) {
+   if(n === 1 || n === 0){
+       return 1;
+   }
+   return n * mul(n-1);
+}
+
+//斐波那契数列
+//fib(n) = fib(n-1) + fib(n-2)
+function fib( n ) {
+   if (n === 1 || n === 2){
+       return 1;
+   }else{
+       return fib(n-1) + fib(n-2);
+   }
+}
+</code></pre><p><strong>缺点：递归的运行速度慢</strong></p>
+<h1 id="4-作用域"><a href="#4-作用域" class="headerlink" title="4.作用域"></a>4.作用域</h1><h1 id="4-1-scope-和作用域链"><a href="#4-1-scope-和作用域链" class="headerlink" title="4.1 [[scope]]和作用域链"></a>4.1 [[scope]]和作用域链</h1><ol>
+<li><strong>[[scope]]</strong>:每个js函数都是一个对象，对象中有些属性我们可以访问，但有些不可以，这些属性仅供javascript引擎存取，[[scope]]就是其中一个我。[[scope]]指的就是我们所说的作用域，其中存储了执行期上下文（AO,GO）的集合。</li>
+<li><strong>作用域链</strong>：[[scope]]中所存储的执行期上下文对象的集合，这个集合呈链式链接，我们把这种链式链接叫做作用域链。</li>
+<li><strong>执行期上下文</strong>：当函数执行时，会创建一个称为执行期上下文的内部对象。一个执行期上下文定义了一个函数执行时的环境，函数每次执行时对应的执行期 上下文都是独一无二的，所以多次调用一个函数会创建多个执行期上下文，当函数执行完毕，它所产生的执行期上下文即被销毁。</li>
+<li><strong>查找变量</strong>：从作用域链的顶端依次向下查找。</li>
+</ol>
+<pre><code>function a(){
+    function b(){
+        var b = 234;
+    }
+
+    var a = 123;
+    b();
+}
+
+var glob = 100;
+a()
+</code></pre><p><img src="https://i.loli.net/2020/02/02/xViwa6IsbYkH54d.png" alt="微信截图_20200202151651.png"><br><img src="https://i.loli.net/2020/02/02/xaM6gfE2Zzr1PJN.png" alt="微信截图_20200202152132.png"><br><img src="https://i.loli.net/2020/02/02/XBMGqyJZ71wKfur.png" alt="微信截图_20200202152915.png"></p>
+<p>查找变量时按顺序在作用域链上查找，某个函数执行完毕，它对应的AO即被销毁，再次执行时会创建新的AO。</p>
+<h1 id="5-立即执行函数"><a href="#5-立即执行函数" class="headerlink" title="5.立即执行函数"></a>5.立即执行函数</h1><p>针对初始化功能的函数，执行完即销毁</p>
+<pre><code>var num = (function(a, b, c){
+    return a  + b + c;
+}(1, 2, 3))
+
+//只有表达式才能被执行，且会忽略函数的名字
++ function demo(){
+    console.log(1);
+}()
+//+ 将函数变成了表达式，即可立即执行，其他符号同样道理；
+//demo函数被立即执行且销毁，控制台打印demo函数会报错：demo is not defined
+//()起到同样效果
+(function(){
+    console.log(2);
+}())
+//(function(){
+//    console.log(2);
+//})()
+//两种写法效果相同
+</code></pre><p><strong>特殊情况：</strong></p>
+<pre><code>function test(a,b,c,d){
+    console.log(a + b + c + d);
+}(1,2,3,4)
+//不会报错，因为解析器识别成了以下形式，既不会报错也不会执行。
+// function test(a,b,c,d){
+//     console.log(a + b + c + d);
+// }
+
+// (1,2,3,4)
+
+</code></pre><h1 id="6-闭包"><a href="#6-闭包" class="headerlink" title="6.闭包"></a>6.闭包</h1><h2 id="6-1-js执行过程（三步曲）"><a href="#6-1-js执行过程（三步曲）" class="headerlink" title="6.1 js执行过程（三步曲）"></a>6.1 js执行过程（三步曲）</h2><h3 id="6-1-1-语法分析"><a href="#6-1-1-语法分析" class="headerlink" title="6.1.1 语法分析"></a>6.1.1 语法分析</h3><p>   通篇扫描，看是否有语法错误</p>
+<h3 id="6-1-2-预编译"><a href="#6-1-2-预编译" class="headerlink" title="6.1.2 预编译"></a>6.1.2 预编译</h3><p><strong>铺垫：</strong></p>
+<ol>
+<li>imply global暗示全局变量：任何变量，如果未经声明就赋值，此变量为全局对象window所有。<pre><code>a = 123;
+//赋值自右向左，b未声明，赋值123给b，再声明a，将b的值赋给a；
+function test(){
+ var a = b = 123;
+}
+test();
+console.log(window.a, window.b);    //undefined, 123
+</code></pre></li>
+<li>一切声明的全局变量，全是window的属性,window就是全局的域。<pre><code>var a = 123;  ==&gt; window.a = 123;
+</code></pre></li>
+</ol>
+<p><strong>预编译过程：</strong></p>
+<ol>
+<li><p><strong>函数体预编译（函数执行的前一刻发生</strong>）：<br>   1 创建AO对象（Activation Object,即执行期上下文）<br>   2 找形参和变量声明，将变量和形参名作为AO属性名，值为undefined<br>   3 将实参值和形参统一<br>   4 在函数体内找函数声明，加到AO中，值为函数体，如果变量重复则覆盖第二步中的变量值<br>   <strong>预编译包括if中的代码</strong></p>
+<pre><code>   function fn(a){
+            console.log(a);
+            var a = 123;
+            console.log(a);
+            function a () {}
+            console.log(a);
+            var b = function () {}
+            console.log(b);
+            function d () {}
+  } 
+  fn(1); 
+</code></pre></li>
+<li><p><strong>全局预编译（先执行）</strong>：<br> 1 生成GO对象（window对象）<br> 2 找变量声明，作为GO属性，值为undefined<br> 3 找函数声明加到GO中，值为函数体，如果变量重复则覆盖第二步中的变量值</p>
+<pre><code>  console.log(test);//fucntion test(test){}
+  function test(test){
+      console.log(test);//function test(){}
+      var test = 123;
+      console.log(test);//123
+      function test(){}
+  }
+  test(1)
+  var test = 123;
+  console.log(test);//123
+
+  //GO{
+      // test: function test(){}
+  // }
+  // AO{
+  //     test:function test(){}
+  // }
+</code></pre></li>
+</ol>
+<h3 id="6-1-3-解释执行"><a href="#6-1-3-解释执行" class="headerlink" title="6.1.3 解释执行"></a>6.1.3 解释执行</h3><h2 id="6-2-闭包"><a href="#6-2-闭包" class="headerlink" title="6.2 闭包"></a>6.2 闭包</h2><p>当一个函数被保存到外部时必然会形成闭包，闭包会导致原有作用域链不释放，造成内存占用过多。<br>如下图：</p>
+<pre><code>function a(){
+   function b(){
+       var bbb = 234;
+       console.log(aaa);
+   }
+   var aaa = 123;
+   return b;
+}
+
+var glob = 100;
+demo = a();
+demo();
+</code></pre><p><img src="https://i.loli.net/2020/02/03/pGRnUmCVbL3N42X.png" alt="闭包1.png"><br>a执行完后：<br><img src="https://i.loli.net/2020/02/03/9dx8IsEbtcOW5Va.png" alt="闭包2.png"><br>a执行，b被保存到外部，在a执行时，b被定义且在它的作用域链上保存了a的AO和GO，当a走到return时即执行结束，销毁自身的AO，但它的AO已经被b拿在自己手上，在b运行时会在作用域链上创建自身的AO，执行完销毁的也是自身的AO,a的AO会和GO一样一直存在于b的作用域链上。</p>
+<pre><code>function a(){
+    var num = 100;
+    function b(){
+        num++;
+        console.log(num);
+    }
+    return b;
+}
+demo = a();
+demo(); //101
+demo(); //102
+//num在b被定义时存在于a的AO中，b被返回时携带着此AO，多次执行时改变的是携带出的a的AO，即num的值会一直累加。
+</code></pre><pre><code> var arr1 = (function(){
+   var arr = [];
+   for(var i = 0;i &lt; 10;i ++){
+       arr[i] = function(){
+           console.log(i);
+       }
+       //在赋值时，函数体中的i不会马上赋值，只有在执行时才会寻值，返回时形成闭包；
+   }
+   return arr;
+}())
+
+for(var j = 0;j &lt; arr1.length; j ++){
+   arr1[j]();
+}
+//打印结果皆为10；
+</code></pre><h3 id="6-2-1闭包的作用"><a href="#6-2-1闭包的作用" class="headerlink" title="6.2.1闭包的作用"></a>6.2.1闭包的作用</h3><ol>
+<li><p>实现公有变量</p>
+<pre><code>//累加器
+function a(){
+    var num = 100;
+    function b(){
+        num++;
+        console.log(num);
+    }
+    return b;
+}
+demo = a();
+demo(); //101
+demo(); //102
+</code></pre></li>
+<li>可以做缓存（存储结构）</li>
+<li>可以实现封装，属性私有化</li>
+<li>模块化开发，防止污染全局变量</li>
+</ol>
 
         </div>
         <!-- .entry-content -->
@@ -372,9 +560,26 @@ var demo = function() {
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/02/09/对象，包装类/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2019/12/14/j36bxu5srdUBtH7.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                对象，包装类</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
         
           
-            <div class="post-nepre full next">
+            <div class="post-nepre half next">
           
             <a href="/2020/01/22/typeof-浅类型转换/" rel="next">
               <div class="background">
