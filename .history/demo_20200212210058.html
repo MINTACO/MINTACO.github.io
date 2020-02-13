@@ -21,15 +21,11 @@
 
         }
 
-        function deepClone( origin, target ){
-            var target = target || {},
-                str = Object.prototype.toString,
-                arrStr = "[object Array]";
+        function deepClone( target = {}, origin ){
             for(var prop in origin){
                 if(origin.hasOwnProperty(prop)){
-                    if(typeof origin[prop] === "object" && origin[prop] !== null){
-                        target[prop] = (str.call(origin[prop]) === arrStr) ? [] : {};
-                        deepClone(target[prop],origin[prop]);
+                    if(type(origin[prop]) === "[object Object]"){
+                        deepClone(origin[prop])
                     }else{
                         target[prop] = origin[prop];
                     }
@@ -37,16 +33,8 @@
             }
             return target;
         }
-        
 
-        var obj = {
-            name : 'darren',
-            
-            hobbies: {
-                a : 'pingpang',
-                b : 'running'
-            }
-        }
+        var obj
         
 
     </script>

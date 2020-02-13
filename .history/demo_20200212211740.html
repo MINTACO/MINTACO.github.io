@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function type( target ){
+            var tempType = typeof target,
+                str = Object.prototype.toString;
+            if(target === null){
+                return "null";
+            }else if (tempType === "object"){
+                return str.call( target );
+            }else{
+                return tempType;
+            }
+
+        }
+
+        // function deepClone( target, origin ){
+        //     var target = target || {},
+        //         str = Object.prototype.toString;
+        //     for(var prop in origin){
+        //         if(origin.hasOwnProperty(prop)){
+        //             if(typeof origin[prop] === "object" && typeof origin[prop] !== "null"){
+        //                 target[prop] = (str.call(origin[prop]) === "[object Object]") ? {} : [];
+        //                 deepClone(target[prop],origin[prop]);
+        //             }else{
+        //                 target[prop] = origin[prop];
+        //             }
+        //         }
+        //     }
+        //     return target;
+        // }
+        function deepClone( Origin,Target ){
+        var Target = Target || {},
+            toStr = Object.prototype.toString;
+            arrStr = "[object Array]";
+        for( var key in Origin ){
+            if( Origin.hasOwnProperty(key) ){
+                if(typeof Origin[key] == 'object' && Origin[key] !== 'null'){
+                    Target[key] = (toStr.call( Origin[key] ) == arrStr) ? [] : {};
+                    deepClone( Origin[key],Target[key] );
+                }else{
+                    Target[key] = Origin[key];
+                }
+            }
+        }
+        return Target;   
+    }
+
+        var obj = {
+            name : 'darren',
+            age : 23,
+            sex : 'male',
+            hobbies: {
+                a : 'pingpang',
+                b : 'running'
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

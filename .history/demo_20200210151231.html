@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr1 = (function(){
+        //     var arr = [];
+        //     for(var i = 0;i < 10;i ++){
+        //         arr[i] = function(){
+        //             console.log(i);
+        //         }
+        //     }
+        //     return arr;
+        // }())
+        // for(var j = 0;j < arr1.length; j ++){
+        //     arr1[j]();
+        // }
+        // for(var i = 0;i < 10;i ++){
+        //     (function(){
+        //         console.log(i);
+        //     }())
+        // }
+
+        // var character = {
+        //     name: "Darren",
+        //     age: "23",
+        //     HP: 100,
+        //     eat: function () {
+        //         console.log("I am eating");
+        //         this.HP ++;
+        //     },
+        //     bleeding: function () {
+        //         console.log("I am bleeding");
+        //         this.HP --;
+        //     }
+            
+        // }
+
+        // function Student(name, age) {
+        //     //var this = {}
+        //     //this.name,this.age,this.grade...
+        //     this.name = name;
+        //     this.age = age;
+        //     this.grade = 2020;
+        //     this.school = 'peking';
+        //     //return this;
+        //     return '123';
+        // }
+
+        // var st1 = new Student('darren', 23);
+
+
+
+        // var num = new Num(123);
+        // var str = new String('abc');
+        // var bol = new Boolean('true');
+        // var num = new Number(4);
+        // var num = 4;
+        // num.len = 1;
+        // console.log(num.len)
+
+        // function Person(name, age, sex){
+        //     var a = 0;
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     function sss(){
+        //         a ++;
+        //         console.log(a);
+        //     }
+        //     this.say = sss;
+        // }
+        // var oPerson = new Person();
+        // oPerson.say();
+        // oPerson.say();
+        // var oPerson1 = new Person();
+        // oPerson1.say();
+        // var x = 1, y = z = 0;
+        // function add(n){
+        //     return n = n + 1;
+        // } 
+        // y = add(x);
+        // function add(n){
+        //     return n = n + 3;
+        // }
+        // z = add(x);
+        // console.log(x, y, z);
+
+        function charLen( str ){
+            var len;
+            var length = str.length;
+            console.log(length);
+            for(var i = 0;i < length; i ++){
+                // console.log(str.charCodeAt(i));
+                if( str.charCodeAt(i)>255 ){
+                    len += 2;
+                }else{
+                    len += 1;
+                }
+                console.log(len)
+            }
+            return len;
+        }
+    </script>
+</body>
+</html>

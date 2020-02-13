@@ -21,7 +21,7 @@
 
         }
 
-        function deepClone( origin, target ){
+        function deepClone( target, origin ){
             var target = target || {},
                 str = Object.prototype.toString,
                 arrStr = "[object Array]";
@@ -37,7 +37,22 @@
             }
             return target;
         }
-        
+        // function deepClone( Origin,Target ){
+        //     var Target = Target || {},
+        //         toStr = Object.prototype.toString;
+        //         arrStr = "[object Array]";
+        //     for( var key in Origin ){
+        //         if( Origin.hasOwnProperty(key) ){
+        //             if(typeof Origin[key] == 'object' && Origin[key] !== 'null'){
+        //                 Target[key] = (toStr.call( Origin[key] ) == arrStr) ? [] : {};
+        //                 deepClone( Origin[key],Target[key] );
+        //             }else{
+        //                 Target[key] = Origin[key];
+        //             }
+        //         }
+        //     }
+        //     return Target;   
+        // }
 
         var obj = {
             name : 'darren',
