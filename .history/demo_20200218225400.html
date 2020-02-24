@@ -7,13 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div></div>
-    <div></div>
-    <div></div>
     <script>
         // "use strict"
-        
-        
+        Array.prototype.push = function () {
+            for(var i = 0; i < arguments.length; i ++){
+                this[this.length] = arguments[i];
+            }
+            return this.length;
+        }
+        var arr = [1,2,3];
     </script>
 </body>
 </html>

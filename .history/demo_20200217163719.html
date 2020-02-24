@@ -7,13 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div></div>
-    <div></div>
-    <div></div>
     <script>
         // "use strict"
-        
-        
+        var a = 123;
+        function test(){
+            console.log(this.a);
+            this.a = 345
+            console.log(a);
+        }
+        new test();
     </script>
 </body>
 </html>
