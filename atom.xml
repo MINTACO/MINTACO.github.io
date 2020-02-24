@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-02-12T08:56:03.814Z</updated>
+  <updated>2020-02-19T08:03:12.303Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>错误信息</title>
+    <link href="/2020/02/19/%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/"/>
+    <id>/2020/02/19/错误信息/</id>
+    <published>2020-02-19T07:28:31.000Z</published>
+    <updated>2020-02-19T08:03:12.303Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-Error-name的六种植对应的信息：&quot;&gt;&lt;a href=&quot;#1-Error-name的六种植对应的信息：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组</title>
+    <link href="/2020/02/18/%E6%95%B0%E7%BB%84/"/>
+    <id>/2020/02/18/数组/</id>
+    <published>2020-02-18T07:32:36.000Z</published>
+    <updated>2020-02-18T15:07:49.532Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-定义方法&quot;&gt;&lt;a href=&quot;#1-定义方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>this</title>
+    <link href="/2020/02/17/this/"/>
+    <id>/2020/02/17/this/</id>
+    <published>2020-02-17T02:54:02.000Z</published>
+    <updated>2020-02-17T06:48:38.957Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-this指向&quot;&gt;&lt;a href=&quot;#1-this指向&quot; class=&quot;headerlink&quot; title=&quot;1.this指向&quot;&gt;&lt;/a&gt;1.this指向&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;函数预编译过程 this –&amp;gt;
+        
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Javascript" scheme="/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>继承，命名空间，对象枚举</title>
@@ -462,87 +541,6 @@
     
     
       <category term="VUE" scheme="/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue插值表达式</title>
-    <link href="/2019/11/12/vue%E6%8F%92%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>/2019/11/12/vue插值表达式/</id>
-    <published>2019-11-12T01:01:59.000Z</published>
-    <updated>2019-12-26T02:11:30.667Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM 绑定至底层 Vue
-        
-      
-    
-    </summary>
-    
-      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="VUE" scheme="/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue指令</title>
-    <link href="/2019/11/12/vue%E6%8C%87%E4%BB%A4/"/>
-    <id>/2019/11/12/vue指令/</id>
-    <published>2019-11-12T00:58:37.000Z</published>
-    <updated>2019-12-26T02:11:30.667Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;v-pre 跳过该元素和它的子元素的变异过程，显示原始的{ { } }的标签&lt;/li&gt;
-&lt;li&gt;v-cloak 该指令保持在元素上，直到关联实例结束变异 可与css配合使用隐藏未编译的{ { } }标签&lt;/li&gt;
-&lt;li&gt;v-once
-        
-      
-    
-    </summary>
-    
-      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="VUE" scheme="/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo多电脑配置</title>
-    <link href="/2019/11/11/hexo%E5%A4%9A%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE/"/>
-    <id>/2019/11/11/hexo多电脑配置/</id>
-    <published>2019-11-11T01:29:26.000Z</published>
-    <updated>2019-12-26T02:11:30.667Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;hexo多台电脑配置&quot;&gt;&lt;a href=&quot;#hexo多台电脑配置&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="开发" scheme="/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="Tools" scheme="/tags/Tools/"/>
     
   </entry>
   
