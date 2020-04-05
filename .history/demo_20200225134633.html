@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script>
-        document.addEventListener('DOMContentLoaded',function(){
-            //执行语句
-        },false)
-    </script>
     <style>
         input{
             border: 1px solid black;
@@ -19,18 +14,17 @@
     </style>
 </head>
 <body>
-    
-    <div style="width:100px;height: 100px;background-color: #ff0000;"></div>
-
+    minutes: <input type="text" value="0">
+    seconds: <input type="text" value="0">
     <script>
-        var oDiv = document.getElementsByTagName('div')[0];
-        var str = "652010123456";
-        var reg = /^(652010)/;
-        console.log(reg.test(str));
-
+        // "use strict"
+        var ipts = document.getElementsByTagName('input');
+        val1 = ipts[0].value;
+        val2 = ipts[1].value;
+        setInterval(function(){
+            val1 ++;
+            if(val1 = 59)
+        },1000)
     </script>
-
-        
-    
 </body>
 </html>

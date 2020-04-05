@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            border: 1px solid black;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="width:100px;height: 100px;background-color: #ff0000;"></div>
+
+    <script>
+        var oDiv = document.getElementsByTagName('div')[0];
+        document.oncontextmenu = function(event){
+            var event = event || window.event;
+            cancelHandler(event);
+        }
+
+        addEvent(oDiv, 'click' ,function(){
+            console.log(1)
+        })
+
+        addEvent(document, 'click' ,function(e){
+            var e = e || window.event;
+            console.log(e);
+        })
+       //attachEvent可以绑定多个事件，且this指向window
+       //兼容写法
+        function addEvent(elem, type, handle){
+            if(elem.addEventListener){
+                elem.addEventListener(type, handle, false);
+            }else if(elem.attachEvent){
+                elem.attachEvent('on' + type, function(){
+                    handle.call(elem);
+                });
+            }else{
+                elem['on' + type] = handle;
+            }
+        }
+        //解除绑定
+        // ele.onclick = false/''/null
+        // ele.removeEventListener(type,fn,false)
+        // ele.detachEvent('on' + type, fn)
+        
+        //阻止冒泡
+        function stopBubble(event){
+            if(event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        }
+
+        //阻止默认事件
+        function cancelHandler(event){
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue = false;
+            }
+        }
+
+        //拖拽
+        function drag(elem){
+            var disX,
+                disY;
+            addEvent(elem, 'mousedown', function(e){
+                var e = e || window.event;
+                disX = 
+            })
+        }
+
+    </script>
+
+        
+    
+</body>
+</html>

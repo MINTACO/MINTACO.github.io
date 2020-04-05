@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            border: 1px solid black;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    
+
+    <script>
+       //attachEvent可以绑定多个事件，且this指向window
+       //兼容写法
+        function addEvent(elem, type, handle){
+            if(elem.addEventListener){
+                elem.addEventListener(type, handle, false);
+            }else if(elem.attachEvent){
+                elem.attachEvent('on' + type, function(){
+                    handle.call(elem);
+                });
+            }else{
+                elem[handle];
+            }
+
+        }
+    </script>
+
+        
+    
+</body>
+</html>
